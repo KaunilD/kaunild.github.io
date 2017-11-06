@@ -5,7 +5,7 @@
     
     <url>
     
-      <loc>http://kaunild.github.io/publication/clothing-search/</loc>
+      <loc>http://kaunild.github.io/publication/robocodes/</loc>
       <lastmod>2017-07-01T00:00:00+00:00</lastmod>
     </url>
     
@@ -14,7 +14,7 @@
     
     <url>
     
-      <loc>http://kaunild.github.io/tags/academic/</loc>
+      <loc>http://kaunild.github.io/project/1_cobrix/</loc>
       <lastmod>2017-01-01T00:00:00+00:00</lastmod>
     </url>
     
@@ -59,60 +59,6 @@
     
     <url>
     
-      <loc>http://kaunild.github.io/project/learner-management-system/</loc>
-      <lastmod>2016-04-27T00:00:00+00:00</lastmod>
-    </url>
-    
-  
-    
-    
-    <url>
-    
-      <loc>http://kaunild.github.io/project/offline-test/</loc>
-      <lastmod>2016-04-27T00:00:00+00:00</lastmod>
-    </url>
-    
-  
-    
-    
-    <url>
-    
-      <loc>http://kaunild.github.io/project/cobrix/</loc>
-      <lastmod>2016-04-27T00:00:00+00:00</lastmod>
-    </url>
-    
-  
-    
-    
-    <url>
-    
-      <loc>http://kaunild.github.io/project/text-sumarization/</loc>
-      <lastmod>2016-04-27T00:00:00+00:00</lastmod>
-    </url>
-    
-  
-    
-    
-    <url>
-    
-      <loc>http://kaunild.github.io/project/digitizing-medical-reports/</loc>
-      <lastmod>2016-04-27T00:00:00+00:00</lastmod>
-    </url>
-    
-  
-    
-    
-    <url>
-    
-      <loc>http://kaunild.github.io/project/multi-media-box/</loc>
-      <lastmod>2016-04-27T00:00:00+00:00</lastmod>
-    </url>
-    
-  
-    
-    
-    <url>
-    
       <loc>http://kaunild.github.io/post/getting-started/</loc>
       <lastmod>2017-09-03T00:00:00+05:30</lastmod>
     </url>
@@ -149,6 +95,24 @@
     
     <url>
     
+      <loc>http://kaunild.github.io/project/2_disguised-face-identification/</loc>
+      <lastmod>2016-01-01T00:00:00+00:00</lastmod>
+    </url>
+    
+  
+    
+    
+    <url>
+    
+      <loc>http://kaunild.github.io/project/3_smarttitle/</loc>
+      <lastmod>2015-01-01T00:00:00+00:00</lastmod>
+    </url>
+    
+  
+    
+    
+    <url>
+    
       <loc>http://kaunild.github.io/post/migrate-from-jekyll/</loc>
       <lastmod>2014-03-10T00:00:00+05:30</lastmod>
     </url>
@@ -158,8 +122,54 @@
     
     <url>
     
+      <loc>http://kaunild.github.io/project/6_multi-media-box/</loc>
+      <lastmod>2014-01-01T00:00:00+00:00</lastmod>
+    </url>
+    
+  
+    
+    
+    <url>
+    
+      <loc>http://kaunild.github.io/project/5_digitizing-medical-reports/</loc>
+      <lastmod>2013-01-01T00:00:00+00:00</lastmod>
+    </url>
+    
+  
+    
+    
+    <url>
+    
+      <loc>http://kaunild.github.io/project/4_learner-management-system/</loc>
+      <lastmod>2012-01-01T00:00:00+00:00</lastmod>
+    </url>
+    
+  
+    
+    
+    <url>
+    
+      <loc>http://kaunild.github.io/project/7_offline-test/</loc>
+      <lastmod>2011-01-01T00:00:00+00:00</lastmod>
+    </url>
+    
+  
+    
+    
+    <url>
+    
       <loc>http://kaunild.github.io/publication_types/1/</loc>
       <lastmod>2017-07-01T00:00:00+00:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    
+    <url>
+    
+      <loc>http://kaunild.github.io/tags/academic/</loc>
+      <lastmod>2017-09-03T00:00:00+05:30</lastmod>
       <priority>0</priority>
     </url>
     
@@ -178,17 +188,7 @@
     <url>
     
       <loc>http://kaunild.github.io/tags/deep-learning/</loc>
-      <lastmod>2016-04-27T00:00:00+00:00</lastmod>
-      <priority>0</priority>
-    </url>
-    
-  
-    
-    
-    <url>
-    
-      <loc>http://kaunild.github.io/tags/demo/</loc>
-      <lastmod>2016-04-27T00:00:00+00:00</lastmod>
+      <lastmod>2017-01-01T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
     
@@ -199,6 +199,16 @@
     
       <loc>http://kaunild.github.io/tags/hugo/</loc>
       <lastmod>2017-09-03T00:00:00+05:30</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    
+    <url>
+    
+      <loc>http://kaunild.github.io/tags/java/</loc>
+      <lastmod>2013-01-01T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
     
@@ -228,7 +238,17 @@
     <url>
     
       <loc>http://kaunild.github.io/tags/nlp/</loc>
-      <lastmod>2016-04-27T00:00:00+00:00</lastmod>
+      <lastmod>2015-01-01T00:00:00+00:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    
+    <url>
+    
+      <loc>http://kaunild.github.io/tags/php/</loc>
+      <lastmod>2011-01-01T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
     
@@ -238,7 +258,7 @@
     <url>
     
       <loc>http://kaunild.github.io/project/</loc>
-      <lastmod>2016-04-27T00:00:00+00:00</lastmod>
+      <lastmod>2017-01-01T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
     
@@ -257,8 +277,28 @@
     
     <url>
     
+      <loc>http://kaunild.github.io/tags/python/</loc>
+      <lastmod>2016-01-01T00:00:00+00:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    
+    <url>
+    
       <loc>http://kaunild.github.io/tags/</loc>
-      <lastmod>2017-01-01T00:00:00+00:00</lastmod>
+      <lastmod>2017-09-03T00:00:00+05:30</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    
+    <url>
+    
+      <loc>http://kaunild.github.io/tags/web-server/</loc>
+      <lastmod>2011-01-01T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
     
