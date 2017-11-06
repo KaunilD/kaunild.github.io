@@ -32,69 +32,6 @@
     
     <url>
     
-      <loc>http://kaunild.github.io/talk/</loc>
-      <lastmod>2017-01-01T00:00:00+00:00</lastmod>
-    </url>
-    
-  
-    
-    
-    <url>
-    
-      <loc>http://kaunild.github.io/talk/example-talk/</loc>
-      <lastmod>2017-01-01T00:00:00+05:30</lastmod>
-    </url>
-    
-  
-    
-    
-    <url>
-    
-      <loc>http://kaunild.github.io/post/</loc>
-      <lastmod>2017-01-01T00:00:00+05:30</lastmod>
-    </url>
-    
-  
-    
-    
-    <url>
-    
-      <loc>http://kaunild.github.io/post/getting-started/</loc>
-      <lastmod>2017-09-03T00:00:00+05:30</lastmod>
-    </url>
-    
-  
-    
-    
-    <url>
-    
-      <loc>http://kaunild.github.io/post/widgets/</loc>
-      <lastmod>2016-04-19T00:00:00+05:30</lastmod>
-    </url>
-    
-  
-    
-    
-    <url>
-    
-      <loc>http://kaunild.github.io/post/managing-content/</loc>
-      <lastmod>2016-04-18T00:00:00+05:30</lastmod>
-    </url>
-    
-  
-    
-    
-    <url>
-    
-      <loc>http://kaunild.github.io/post/writing-markdown-latex/</loc>
-      <lastmod>2016-04-17T00:00:00+05:30</lastmod>
-    </url>
-    
-  
-    
-    
-    <url>
-    
       <loc>http://kaunild.github.io/project/2_disguised-face-identification/</loc>
       <lastmod>2016-01-01T00:00:00+00:00</lastmod>
     </url>
@@ -106,15 +43,6 @@
     
       <loc>http://kaunild.github.io/project/3_smarttitle/</loc>
       <lastmod>2015-01-01T00:00:00+00:00</lastmod>
-    </url>
-    
-  
-    
-    
-    <url>
-    
-      <loc>http://kaunild.github.io/post/migrate-from-jekyll/</loc>
-      <lastmod>2014-03-10T00:00:00+05:30</lastmod>
     </url>
     
   
@@ -168,16 +96,6 @@
     
     <url>
     
-      <loc>http://kaunild.github.io/tags/academic/</loc>
-      <lastmod>2017-09-03T00:00:00+05:30</lastmod>
-      <priority>0</priority>
-    </url>
-    
-  
-    
-    
-    <url>
-    
       <loc>http://kaunild.github.io/categories/</loc>
       <priority>0</priority>
     </url>
@@ -197,28 +115,8 @@
     
     <url>
     
-      <loc>http://kaunild.github.io/tags/hugo/</loc>
-      <lastmod>2017-09-03T00:00:00+05:30</lastmod>
-      <priority>0</priority>
-    </url>
-    
-  
-    
-    
-    <url>
-    
       <loc>http://kaunild.github.io/tags/java/</loc>
       <lastmod>2013-01-01T00:00:00+00:00</lastmod>
-      <priority>0</priority>
-    </url>
-    
-  
-    
-    
-    <url>
-    
-      <loc>http://kaunild.github.io/tags/jekyll/</loc>
-      <lastmod>2014-03-10T00:00:00+05:30</lastmod>
       <priority>0</priority>
     </url>
     
@@ -288,7 +186,7 @@
     <url>
     
       <loc>http://kaunild.github.io/tags/</loc>
-      <lastmod>2017-09-03T00:00:00+05:30</lastmod>
+      <lastmod>2017-01-01T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
     
