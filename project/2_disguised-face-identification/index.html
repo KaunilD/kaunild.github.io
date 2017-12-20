@@ -221,8 +221,13 @@
 
     <div class="article-style" itemprop="articleBody">
       <p>As a Software Engineer at iSenses Inc. I was responsible for developing a machine learning pipeline for Disguised Face Identification.
-After thorough research, a two-stage pipeline was formulated. In the first stage a learned Convolutional Neural Net classifier extracted 14 key feature points from facial images which were then classified into disguised or normal classes using a similarity measure between the 2D surfaces formed from the feature points of a disguised and a non-disguised facial image.
-My research and the resulting pipeline was then implemented on Xilinx FPGA ZYNQ-ZC702 board and materialized into a product.</p>
+After thorough research, a two-stage pipeline was formulated. In the first stage a learned SegNet CNN classifier extracted 14 key feature points from an image. Using these key points facial region is localized. In the second stage, the facial region is classified into disguised or normal classes using an SVM classifier. My research and the resulting pipeline was then implemented on an FPGA board and materialized into a product.</p>
+
+
+<div style="position: relative; padding-bottom: 56.25%; padding-top: 30px; height: 0; overflow: hidden;">
+  <iframe src="//player.vimeo.com/video/248132629" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+ </div>
+
 
 
       
@@ -239,12 +244,12 @@ My research and the resulting pipeline was then implemented on Xilinx FPGA ZYNQ-
   <nav>
   <ul class="pager">
     
-    <li class="previous"><a href="http://kaunild.github.io/project/3_smarttitle/"><span
+    <li class="previous"><a href="http://kaunild.github.io/project/6_smarttitle/"><span
       aria-hidden="true">&larr;</span> Smart Titles.</a></li>
     
 
     
-    <li class="next"><a href="http://kaunild.github.io/project/1_cobrix/">Cobrix. MS Imagine Korea Finalist. <span
+    <li class="next"><a href="http://kaunild.github.io/project/1_cobrix/">Cobrix. Microsoft Imagine Korea Finalist. <span
       aria-hidden="true">&rarr;</span></a></li>
     
   </ul>

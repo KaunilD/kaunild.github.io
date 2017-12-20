@@ -21,12 +21,32 @@
     </item>
     
     <item>
-      <title>Cobrix. MS Imagine Korea Finalist.</title>
+      <title>Cobrix. Microsoft Imagine Korea Finalist.</title>
       <link>http://kaunild.github.io/project/1_cobrix/</link>
       <pubDate>Sun, 01 Jan 2017 00:00:00 +0000</pubDate>
       
       <guid>http://kaunild.github.io/project/1_cobrix/</guid>
-      <description></description>
+      <description>&lt;p&gt;Designed and implemented an ML Pipeline to classify real world objects as preset symbols. These symbols are then used to solve puzzles ( analogous to a compiler interpreting strings as instructions to a computer ). Backed by our accomplishment at MS Imagine Cup, Cobrix is now incubated in Georgia Tech&amp;rsquo;s CreateX program.&lt;/p&gt;
+
+&lt;p&gt;
+&lt;figure &gt;
+    
+        &lt;img src=&#34;http://kaunild.github.io/img/123.jpg&#34; /&gt;
+    
+    
+    &lt;figcaption&gt;
+        &lt;h4&gt;Classification of Lego Blocks into 4 symbols (denoted by colors R, G, B and Yellow).&lt;/h4&gt;
+        
+    &lt;/figcaption&gt;
+    
+&lt;/figure&gt;
+
+
+&lt;div style=&#34;position: relative; padding-bottom: 56.25%; padding-top: 30px; height: 0; overflow: hidden;&#34;&gt;
+  &lt;iframe src=&#34;//player.vimeo.com/video/248136541&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%;&#34; webkitallowfullscreen mozallowfullscreen allowfullscreen&gt;&lt;/iframe&gt;
+ &lt;/div&gt;
+&lt;/p&gt;
+</description>
     </item>
     
     <item>
@@ -36,54 +56,142 @@
       
       <guid>http://kaunild.github.io/project/2_disguised-face-identification/</guid>
       <description>&lt;p&gt;As a Software Engineer at iSenses Inc. I was responsible for developing a machine learning pipeline for Disguised Face Identification.
-After thorough research, a two-stage pipeline was formulated. In the first stage a learned Convolutional Neural Net classifier extracted 14 key feature points from facial images which were then classified into disguised or normal classes using a similarity measure between the 2D surfaces formed from the feature points of a disguised and a non-disguised facial image.
-My research and the resulting pipeline was then implemented on Xilinx FPGA ZYNQ-ZC702 board and materialized into a product.&lt;/p&gt;
+After thorough research, a two-stage pipeline was formulated. In the first stage a learned SegNet CNN classifier extracted 14 key feature points from an image. Using these key points facial region is localized. In the second stage, the facial region is classified into disguised or normal classes using an SVM classifier. My research and the resulting pipeline was then implemented on an FPGA board and materialized into a product.&lt;/p&gt;
+
+
+&lt;div style=&#34;position: relative; padding-bottom: 56.25%; padding-top: 30px; height: 0; overflow: hidden;&#34;&gt;
+  &lt;iframe src=&#34;//player.vimeo.com/video/248132629&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%;&#34; webkitallowfullscreen mozallowfullscreen allowfullscreen&gt;&lt;/iframe&gt;
+ &lt;/div&gt;
+
 </description>
     </item>
     
     <item>
       <title>Smart Titles.</title>
-      <link>http://kaunild.github.io/project/3_smarttitle/</link>
+      <link>http://kaunild.github.io/project/6_smarttitle/</link>
       <pubDate>Thu, 01 Jan 2015 00:00:00 +0000</pubDate>
       
-      <guid>http://kaunild.github.io/project/3_smarttitle/</guid>
-      <description></description>
+      <guid>http://kaunild.github.io/project/6_smarttitle/</guid>
+      <description>&lt;p&gt;To gain practical insight into Natural Language Processing, I started reading and implementing papers related to NLP in academia.
+This is the result of implementing the paper &lt;a href=&#34;https://nlp.stanford.edu/courses/cs224n/2015/reports/1.pdf&#34;&gt;&amp;ldquo;Generating News Headlines with Recurrent Neural Networks&amp;rdquo;&lt;/a&gt; using Chainer Framework.
+
+&lt;figure &gt;
+    
+        &lt;img src=&#34;http://kaunild.github.io/img/smarttitle_test.png&#34; /&gt;
+    
+    
+    &lt;figcaption&gt;
+        &lt;h4&gt;Result of the training the aforementioned model.&lt;/h4&gt;
+        
+    &lt;/figcaption&gt;
+    
+&lt;/figure&gt;
+&lt;/p&gt;
+</description>
     </item>
     
     <item>
       <title>Wireless Multi-Media Streaming Device</title>
-      <link>http://kaunild.github.io/project/6_multi-media-box/</link>
+      <link>http://kaunild.github.io/project/7_multi-media-box/</link>
       <pubDate>Wed, 01 Jan 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://kaunild.github.io/project/6_multi-media-box/</guid>
-      <description></description>
+      <guid>http://kaunild.github.io/project/7_multi-media-box/</guid>
+      <description>&lt;p&gt;A Raspberry Pi 2 based wireless streaming device.&lt;/p&gt;
+</description>
     </item>
     
     <item>
-      <title>Smart Medical Assistant</title>
-      <link>http://kaunild.github.io/project/5_digitizing-medical-reports/</link>
+      <title>Virtual Medical Assistant</title>
+      <link>http://kaunild.github.io/project/3_digitizing-medical-reports/</link>
       <pubDate>Tue, 01 Jan 2013 00:00:00 +0000</pubDate>
       
-      <guid>http://kaunild.github.io/project/5_digitizing-medical-reports/</guid>
-      <description></description>
+      <guid>http://kaunild.github.io/project/3_digitizing-medical-reports/</guid>
+      <description>&lt;p&gt;Intelligent personal medical and health assistant that can provide up-to-date analysis of your health using CV and NLP.
+&lt;/br&gt;
+This app digitizes a medical report using &lt;b&gt;Tesserract OCR&lt;/b&gt; with the help of &lt;b&gt;OpenCV&lt;/b&gt; and &lt;b&gt;String Processing Algorithms&lt;b&gt; to provide
+a decisive summary of the user&amp;rsquo;s health&lt;/p&gt;
+
+&lt;p&gt;
+&lt;figure &gt;
+    
+        &lt;img src=&#34;http://kaunild.github.io/img/ocr/1.png&#34; /&gt;
+    
+    
+    &lt;figcaption&gt;
+        &lt;h4&gt;Left: Picture of a medical report taken through the app. Right: Result of the image after Preprocessing (Adaptive  thresholding, Erosion and Dilation)&lt;/h4&gt;
+        
+    &lt;/figcaption&gt;
+    
+&lt;/figure&gt;
+
+
+&lt;figure &gt;
+    
+        &lt;img src=&#34;http://kaunild.github.io/img/ocr/3.png&#34; /&gt;
+    
+    
+    &lt;figcaption&gt;
+        &lt;h4&gt;Sliced fields - Haemoglobin.&lt;/h4&gt;
+        
+    &lt;/figcaption&gt;
+    
+&lt;/figure&gt;
+
+
+&lt;figure &gt;
+    
+        &lt;img src=&#34;http://kaunild.github.io/img/ocr/4.png&#34; /&gt;
+    
+    
+    &lt;figcaption&gt;
+        &lt;h4&gt;Sliced fields - PCV.&lt;/h4&gt;
+        
+    &lt;/figcaption&gt;
+    
+&lt;/figure&gt;
+
+
+&lt;figure &gt;
+    
+        &lt;img src=&#34;http://kaunild.github.io/img/ocr/5.png&#34; /&gt;
+    
+    
+    &lt;figcaption&gt;
+        &lt;h4&gt;Result after OCR and Post Processing of recognized strings.&lt;/h4&gt;
+        
+    &lt;/figcaption&gt;
+    
+&lt;/figure&gt;
+&lt;/p&gt;
+</description>
     </item>
     
     <item>
       <title>Affective Computing based L.M.S.</title>
-      <link>http://kaunild.github.io/project/4_learner-management-system/</link>
+      <link>http://kaunild.github.io/project/5_learner-management-system/</link>
       <pubDate>Sun, 01 Jan 2012 00:00:00 +0000</pubDate>
       
-      <guid>http://kaunild.github.io/project/4_learner-management-system/</guid>
-      <description></description>
+      <guid>http://kaunild.github.io/project/5_learner-management-system/</guid>
+      <description>&lt;p&gt;In my bachelor year joined the Machine Learning Lab in KJSCE led by Prof. Kavita Kelkar to work on my project titled - &lt;i&gt;Learner Centric Affect Monitoring System &lt;/i&gt;(&lt;b&gt;LCAMS&lt;/b&gt;).&lt;/p&gt;
+
+&lt;p&gt;LCAMS is an eLearning system based on “Affective Computing” which constantly monitors students’ data across different modalities such as their facial expressions while watching videos, and movement of mouse and keyboard use for detecting whether the student understands the content or not. The lecture content and delivery methods change based on the emotions of the student - for example : by tailoring quizzes which focus on the subject areas that the student was found confused or distracted.&lt;/p&gt;
+</description>
     </item>
     
     <item>
       <title>CMS for conducting Aptitude Tests</title>
-      <link>http://kaunild.github.io/project/7_offline-test/</link>
+      <link>http://kaunild.github.io/project/4_offline-test/</link>
       <pubDate>Sat, 01 Jan 2011 00:00:00 +0000</pubDate>
       
-      <guid>http://kaunild.github.io/project/7_offline-test/</guid>
-      <description></description>
+      <guid>http://kaunild.github.io/project/4_offline-test/</guid>
+      <description>&lt;p&gt;A CMS for creating and conducting tests. The CMS can create text based MCQ questions, export results to a resuable CSV and show the number of users connected to the test realtime.&lt;/p&gt;
+
+
+&lt;div style=&#34;position: relative; padding-bottom: 56.25%; padding-top: 30px; height: 0; overflow: hidden;&#34;&gt;
+  &lt;iframe src=&#34;//player.vimeo.com/video/248138601&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%;&#34; webkitallowfullscreen mozallowfullscreen allowfullscreen&gt;&lt;/iframe&gt;
+ &lt;/div&gt;
+
+</description>
     </item>
     
   </channel>
