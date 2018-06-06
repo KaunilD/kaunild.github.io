@@ -1,0 +1,75 @@
+.chatItem{
+  cursor: pointer;
+  width: 100%;
+  min-height: 70px;
+  border-left: 5px solid #FFFFFF;
+  padding: 0px 10px 0px 10px;
+}
+
+.activeChatItem{
+    border-left: 5px solid #CCCCCC;
+    background: #EEEEEE;
+}
+
+.chatItem:hover{
+  background-color: #eeeeee;
+}
+
+.chatItem{
+    clear: both;
+}
+
+.chatItem > img{
+    float: left;
+    max-width: 60px !important;
+    margin-top: 6px;
+}
+
+
+.chatItem > div.content{
+    height: 100%;
+    padding-left: 5px;
+    overflow: hidden; /* BFC */
+    display: block;
+}
+
+div.header, div.footer{
+    width: 100%;
+    color: #888888;
+    font-size: 12px;
+    min-height: 35px;
+
+}
+
+div.header{
+    padding-top: 10px;
+}
+
+div.footer{
+    padding-bottom: 10px;
+}
+
+div.header > div{
+    color: #000000;
+    overflow: hidden;
+    text-align: justify;
+    width: 100%;
+    float: left;
+    font-size: 14px;
+}
+
+div.footer > div{
+    vertical-align: middle;
+}
+
+div.footer > div:first-child{
+    text-align: left;
+    width: 60%;
+    float: left;
+}
+
+
+div.footer > div:last-child{
+    text-align: right;
+    float: right;
+}

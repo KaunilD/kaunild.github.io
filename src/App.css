@@ -48,10 +48,14 @@ src: url('/assets/fonts/Raleway-SemiBold.woff2');
   overflow: hidden;
 }
 
-canvas.particles {
+.sidebar > .particles-wrapper {
   position: absolute;
   top: 0px;
   left: 0px;
+  height: 100%;
+}
+
+canvas.particles {
 }
 
 .sidebar-control {
@@ -64,9 +68,11 @@ canvas.particles {
 }
 
 .profile {
-  background: #FFFFFF;
+  position: relative;
+  background: transparent;
   height: 100%;
   width: 100%;
+  z-index: 100;
 }
 
 .profile-text{
@@ -89,7 +95,7 @@ canvas.particles {
   text-transform: uppercase;
 }
 
-.subtitle > span {
+.subtitle > span{
 
   padding-bottom: 5px;
   border-bottom: 2px solid #FFD800;
@@ -97,8 +103,16 @@ canvas.particles {
 
 .social-links {
   display: table;
+  visibility: hidden;
+  opacity: 0;
   margin: 0 auto;
   padding-top: 50px;
+  transition: visibility 0s linear 0s, opacity 1000ms;
+}
+
+.show-social-links {
+  visibility: visible;
+  opacity: 1;
 }
 
 .social-links > ul{
@@ -109,6 +123,7 @@ canvas.particles {
 
 .social-links > ul > li {
   display: inline;
+  cursor: pointer;
   margin: 0px 10px;
 }
 
@@ -150,15 +165,27 @@ canvas.particles {
   box-sizing: border-box;
 }
 
+.page-title {
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s linear 0s, opacity 1000ms;
+}
+
 .page-title > p {
   text-align: right !important;
   padding-bottom: 20px;
   margin: 0px;
-  font-size: 40px;
+  font-size: 46px;
   font-family: RalewayBold;
   color: #FFFFFF;
   letter-spacing: 1px;
   direction: rtl;
+}
+
+
+.show-page-title {
+  opacity: 1;
+  visibility: visible;
 }
 
 .page-seperator {
@@ -166,15 +193,29 @@ canvas.particles {
   background: #FFFFFF;
   direction: rtl;
   float: right;
-  transition: width 0.3s ease;
+  width: 80%;
+  opacity: 0;
+  transition: all 0.6s linear;
 }
 
-.show {
-  width: 0%;
+.show-page-seperator {
+  width: 100%;
+  opacity: 1;
+}
+
+.page-descp {
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s linear 0s, opacity 1000ms;
+}
+
+.show-page-descp {
+  visibility: visible;
+  opacity: 1;
 }
 
 .page-descp > p {
-  font-size: 18px;
+  font-size: 20px;
   color: #FFFFFF;
   font-family: FuturaPTBook;
   text-align: justify;
