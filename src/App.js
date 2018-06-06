@@ -61,9 +61,7 @@ class App extends Component {
                   I joined <a target='blank' className='facebook' href='https://research.fb.com/people/dhruv-kaunil/'>&nbsp;Facebook&nbsp;</a> as a Software Engineer in 2016 where I work on
                   computer vision and machine learning problems in Connectivity Lab
                   for the Smart Addresses Project.
-                  <br/>
-
-                  <br/>
+                  <br/><br/>
                   My research interests include
                   inter-disciplinary applications of Machine Learning, Computer Vision,
                   and Natural Language Processing in Affective Computing and HCI
