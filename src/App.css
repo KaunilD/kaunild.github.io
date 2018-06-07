@@ -169,6 +169,7 @@ canvas.particles {
   visibility: hidden;
   opacity: 0;
   transition: visibility 0s linear 0s, opacity 1000ms;
+
 }
 
 .page-title > p {
@@ -196,6 +197,7 @@ canvas.particles {
   width: 80%;
   opacity: 0;
   transition: all 0.6s linear;
+  transition-delay: 200ms;
 }
 
 .show-page-seperator {
@@ -207,6 +209,7 @@ canvas.particles {
   visibility: hidden;
   opacity: 0;
   transition: visibility 0s linear 0s, opacity 1000ms;
+  transition-delay: 400ms;
 }
 
 .show-page-descp {

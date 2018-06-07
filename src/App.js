@@ -26,19 +26,13 @@ class App extends Component {
   toggleSocialLinks () {
     let parent = this
     this.setState({socialLinks: true})
-    setTimeout(this.initPage1Visibility(), 100)
+    setTimeout(this.initPage1Visibility(), 600)
   }
 
   initPage1Visibility () {
     let parent = this
-    setTimeout( function () {
-      parent.setState({page1Title: true})
-      setTimeout( function () {
-        parent.setState({page1Seperator: true})
-        setTimeout( function () {
-          parent.setState({page1Descp: true})
-        }, 1500)
-      }, 900)
+    setTimeout(function () {
+      parent.setState({page1Title: true, page1Descp: true, page1Seperator: true})
     }, 300)
   }
 
