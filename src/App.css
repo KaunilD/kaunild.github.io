@@ -76,10 +76,18 @@ canvas.particles {
 }
 
 .profile-text{
-  padding-top: 50%;
   display: table;
-  margin: 0 auto;
+  position: absolute;
+  top: 50%;
+  left: 50%;
   font-family: RalewayLight;
+  transition: all linear 400ms;
+  transition-timing-function: cubic-bezier(0.7, 0, 0.3, 1);
+  transform: translate(-50%, -50%);
+}
+
+.hide-profile-text {
+  top: 100px;
 }
 
 .profile-text > .title {
@@ -101,18 +109,128 @@ canvas.particles {
   border-bottom: 2px solid #FFD800;
 }
 
-.social-links {
+.menu {
+  width: 100%;
+  visibility: visible;
+  opacity: 1;
   display: table;
+  font-size: 14px;
+  text-transform: uppercase;
+  position: absolute;
+  top: 241px;
+  left: 50%;
+  transform: translate(-50%, 0%);
+  transition: all linear 400ms;
+  transition-timing-function: cubic-bezier(0.7, 0, 0.3, 1);
+  overflow: hidden;
+}
+
+.hide-menu {
+  opacity: 0;
+  visibility: hidden;
+  transform: translate(-50%, -50%);
+}
+
+ul.menu-main {
+  box-sizing: content-box;
+  list-style: none;
+  padding: 0px 0px 0px 20px;
+  width: 100%;
+  max-height: 400px;
+  overflow-y: scroll;
+}
+
+ul.menu-main > li{
+  cursor: pointer;
+  font-family: RalewaySemiBold;
+  width: 100%;
+  font-size: 18px;
+  padding: 5px 0px;
+}
+
+ul.menu-main > li > a {
+  width: 100%;
+  padding: 5px 5px;
+  transition: all linear 100ms;
+  transition-timing-function: cubic-bezier(0.7, 0, 0.3, 1);
+}
+
+span.expand {
+  font-family: RalewayLight;
+  font-size: 28px;
+  vertical-align: middle;
+  text-align: center;
+}
+
+ul.menu-main > li:hover a{
+  background: #000000;
+  color: #FFFFFF;
+}
+
+ul.sub-menu {
+  height: 0px;
+  padding: 0px 0px 0px 10px;
+  overflow: auto;
+  font-family: RalewayMedium;
+  font-size: 14px;
+  transition: height linear 400ms;
+  transition-timing-function: cubic-bezier(0.7, 0, 0.3, 1);
+  list-style: none;
+}
+
+ul.sub-menu > li {
+  text-align: left;
+  padding: 5px 5px;
+  width: 50%;
+  text-overflow: ellipsis;
+}
+
+ul.sub-menu > li:hover {
+  background: #000000;
+  color: #FFFFFF;
+}
+
+ul.menu-main > li:nth-child(3):hover ul.sub-menu {
+  height: 200px;
+}
+
+
+ul.menu-main > li:nth-child(4):hover ul.sub-menu {
+  height: 100px;
+}
+
+.social-links {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translate(-50%, -50%);
   visibility: hidden;
   opacity: 0;
-  margin: 0 auto;
-  padding-top: 50px;
-  transition: visibility 0s linear 0s, opacity 1000ms;
+  transition: all linear 300ms;
+}
+
+.notices, .notices > p {
+  position: absolute;
+  bottom: 0%;
+  width: 100%;
+  text-align: center;
+  font-family: RalewayMedium;
+  padding: 0px;
+}
+
+.notices > p > img {
+  margin-bottom: -5px;
+  margin-left: 5px;
+  margin-right: 5px;
+  width: 20px; height: 20px;
 }
 
 .show-social-links {
   visibility: visible;
   opacity: 1;
+}
+
+.hide-social-links {
 }
 
 .social-links > ul{
@@ -138,16 +256,33 @@ canvas.particles {
   float: right;
   width: 66.67%;
   height: 100%;
-  overflow: scroll;
-  overflow-x: hidden;
+  overflow-y: scroll;
 }
 
-.page-1 {
+.page-1, .page-2 {
   position: relative;
   width: 100%; height: 100%;
   background-size:cover;
   background-repeat: no-repeat;
   background-image: url('/assets/page-1.1.png');
+}
+
+.page-1-overlay {
+  background-image: url('/assets/page-1.2.png');
+  position: absolute;
+  left: 0px; top: 0px;
+  width: 100%; height: 100%;
+  background-size:cover;
+  background-repeat: no-repeat;
+  visibility: visible;
+  opacity: 1;
+  transition: visibility 1000s linear 1000s, opacity 1000ms;
+}
+
+.hide-page-1-overlay {
+  visibility: hidden;
+  opacity: 0;
+
 }
 
 .page-content {
