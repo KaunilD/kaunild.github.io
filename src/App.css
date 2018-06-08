@@ -7,29 +7,30 @@ body{
   margin: 0 auto;
 }
 
+/*
+FONTS
+ */
 @font-face {
 font-family: FuturaPTBook;
 src: url('/assets/fonts/FuturaPT-Book.woff');
 }
-
-
 @font-face {
 font-family: Raleway;
 src: url('/assets/fonts/Raleway.woff2');
 }
-
 @font-face {
 font-family: RalewayBold;
 src: url('/assets/fonts/Raleway-Bold.woff2');
 }
-
 @font-face {
 font-family: RalewayLight;
 src: url('/assets/fonts/Raleway-Light.woff2');
-}@font-face {
+}
+@font-face {
 font-family: RalewayMedium;
 src: url('/assets/fonts/Raleway-Medium.woff2');
-}@font-face {
+}
+@font-face {
 font-family: RalewaySemiBold;
 src: url('/assets/fonts/Raleway-SemiBold.woff2');
 }
@@ -77,16 +78,23 @@ canvas.particles {
 
 .profile-text{
   display: table;
-  position: absolute;
-  top: 50%;
-  left: 50%;
   font-family: RalewayLight;
-  transition: all linear 400ms;
-  transition-timing-function: cubic-bezier(0.7, 0, 0.3, 1);
+  position: absolute;
+  top: 50%; left: 50%;
   transform: translate(-50%, -50%);
+
+  -webkit-transition: top linear 400ms;
+  -moz-transition: top linear 400ms;
+  -o-transition: top linear 400ms;
+  transition: top linear 400ms;
+
+  -webkit-transition-timing-function: cubic-bezier(0.7, 0, 0.3, 1);
+  -moz-transition-timing-function: cubic-bezier(0.7, 0, 0.3, 1);
+  -o-transition-timing-function: cubic-bezier(0.7, 0, 0.3, 1);
+  transition-timing-function: cubic-bezier(0.7, 0, 0.3, 1);
 }
 
-.hide-profile-text {
+.slideup-profile-text {
   top: 100px;
 }
 
@@ -100,35 +108,43 @@ canvas.particles {
   padding-right: 0px;
   padding-left: 0px;
   padding-top: 15px;
+  font-family: RalewaySemiBold;
   text-transform: uppercase;
 }
 
 .subtitle > span{
-
   padding-bottom: 5px;
   border-bottom: 2px solid #FFD800;
 }
 
 .menu {
   width: 100%;
-  visibility: visible;
-  opacity: 1;
   display: table;
   font-size: 14px;
   text-transform: uppercase;
-  position: absolute;
-  top: 241px;
-  left: 50%;
-  transform: translate(-50%, 0%);
-  transition: all linear 400ms;
-  transition-timing-function: cubic-bezier(0.7, 0, 0.3, 1);
   overflow: hidden;
+  position: absolute;
+  top: 250px; left: 50%;
+  transform: translate(-50%, -50%);
+  visibility: hidden;
+  opacity: 0;
+
+  -webkit-transition: opacity 400ms linear, visibility 400ms linear, transform 400ms linear;
+  -moz-transition: opacity 400ms linear, visibility 400ms linear, transform 400ms linear;
+  -o-transition: opacity 400ms linear, visibility 400ms linear, transform 400ms linear;
+  transition: opacity 400ms linear, visibility 400ms linear, transform 400ms linear;
+
+  -webkit-transition-timing-function: cubic-bezier(0.7, 0, 0.3, 1);
+  -moz-transition-timing-function: cubic-bezier(0.7, 0, 0.3, 1);
+  -o-transition-timing-function: cubic-bezier(0.7, 0, 0.3, 1);
+  transition-timing-function: cubic-bezier(0.7, 0, 0.3, 1);
+
 }
 
-.hide-menu {
-  opacity: 0;
-  visibility: hidden;
-  transform: translate(-50%, -50%);
+.show-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translate(-50%, 0%);
 }
 
 ul.menu-main {
@@ -138,66 +154,144 @@ ul.menu-main {
   width: 100%;
   max-height: 400px;
   overflow-y: scroll;
+  overflow-x: hidden;
 }
 
 ul.menu-main > li{
   cursor: pointer;
   font-family: RalewaySemiBold;
-  width: 100%;
-  font-size: 18px;
-  padding: 5px 0px;
+  width: auto;
+  clear: both;
+  position: relative;
+  float: left;
+  text-transform: capitalize;
+  font-size: 32px;
+}
+
+
+ul.menu-main > li > a::before {
+  display: inline-block;
+  position: absolute;
+  left: 0px;
+  padding: 1px;
+  line-height: 1;
+  width: 0%;
+  height: 100%;
+  content: '';
+  z-index: -1;
+  transition: width 300ms linear;
+
+  -webkit-transition-timing-function: cubic-bezier(0.7, 0, 0.3, 1);
+  -moz-transition-timing-function: cubic-bezier(0.7, 0, 0.3, 1);
+  -o-transition-timing-function: cubic-bezier(0.7, 0, 0.3, 1);
+  transition-timing-function: cubic-bezier(0.7, 0, 0.3, 1);
+
+}
+
+
+ul.menu-main > li:nth-child(1) > a::before {
+  background: #E70000;
+}
+
+ul.menu-main > li:nth-child(2) > a::before {
+  background: #FF8C00;
+}
+
+ul.menu-main > li:nth-child(3) > a::before {
+  background: #007EBE;
+}
+
+
+ul.menu-main > li:nth-child(4) > a::before {
+  background: #00811F;
+}
+
+ul.menu-main > li:nth-child(5) > a::before {
+  background: #2875BA;
+}
+
+ul.menu-main > li:nth-child(6) > a::before {
+  background: #760089;
 }
 
 ul.menu-main > li > a {
-  width: 100%;
-  padding: 5px 5px;
-  transition: all linear 100ms;
-  transition-timing-function: cubic-bezier(0.7, 0, 0.3, 1);
-}
+  width: auto !important;
+  height: 100%;
+  margin-left: 4px;
+  padding: 0px 5px;
+  color: inherit;
+  -webkit-transition: background 100ms linear, color 100ms linear, margin 100ms linear;
+  -moz-transition: background 100ms linear, color 100ms linear, margin 100ms linear;
+  -o-transition: background 100ms linear, color 100ms linear, margin 100ms linear;
+  transition: background 100ms linear, color 100ms linear, margin 100ms linear;
 
-span.expand {
-  font-family: RalewayLight;
-  font-size: 28px;
-  vertical-align: middle;
-  text-align: center;
+  -webkit-transition-timing-function: cubic-bezier(0.7, 0, 0.3, 1);
+  -moz-transition-timing-function: cubic-bezier(0.7, 0, 0.3, 1);
+  -o-transition-timing-function: cubic-bezier(0.7, 0, 0.3, 1);
+  transition-timing-function: cubic-bezier(0.7, 0, 0.3, 1);
 }
 
 ul.menu-main > li:hover a{
-  background: #000000;
   color: #FFFFFF;
+}
+
+ul.menu-main > li:hover a::before{
+  width: 100%;
 }
 
 ul.sub-menu {
+  width: auto;
   height: 0px;
-  padding: 0px 0px 0px 10px;
-  overflow: auto;
+  position: relative;
+  left: 0px;
+  top: 0px;
+  margin-left: 15px;
+  padding: 0px;
+  overflow: hidden;
   font-family: RalewayMedium;
   font-size: 14px;
-  transition: height linear 400ms;
-  transition-timing-function: cubic-bezier(0.7, 0, 0.3, 1);
   list-style: none;
+  color: #FFFFFF;
+  margin: 10px 10px 10px 10px;
+  -webkit-transition: height 400ms linear 100ms, transform 400ms linear 100ms;
+  -moz-transition: height 400ms linear 100ms, transform 400ms linear 100ms;
+  -o-transition: height 400ms linear 100ms, transform 400ms linear 100ms;
+  transition: height 400ms linear 100ms, transform 400ms linear 100ms;
+
+  -webkit-transition-timing-function: cubic-bezier(0.7, 0, 0.3, 1);
+  -moz-transition-timing-function: cubic-bezier(0.7, 0, 0.3, 1);
+  -o-transition-timing-function: cubic-bezier(0.7, 0, 0.3, 1);
+  transition-timing-function: cubic-bezier(0.7, 0, 0.3, 1);
 }
 
 ul.sub-menu > li {
-  text-align: left;
-  padding: 5px 5px;
-  width: 50%;
+  overflow: hidden;
+  padding: 0px 5px;
+  line-height: 26px;
+  height: 26px;
+  white-space: nowrap;
+  width: auto !important;
   text-overflow: ellipsis;
 }
 
+
 ul.sub-menu > li:hover {
-  background: #000000;
-  color: #FFFFFF;
+  background: #FFFFFF;
+  color: #000000;
 }
 
+
 ul.menu-main > li:nth-child(3):hover ul.sub-menu {
-  height: 200px;
+  height: 182px;
+  transform: translateY(5px);
 }
 
 
 ul.menu-main > li:nth-child(4):hover ul.sub-menu {
-  height: 100px;
+  height: 78px;
+  transform: translateY(5px);
 }
+
 
 .social-links {
   position: absolute;
@@ -206,7 +300,20 @@ ul.menu-main > li:nth-child(4):hover ul.sub-menu {
   transform: translate(-50%, -50%);
   visibility: hidden;
   opacity: 0;
-  transition: all linear 300ms;
+
+  -webkit-transition: visibility linear 300ms, opacity linear 300ms;
+  -moz-transition: visibility linear 300ms, opacity linear 300ms;
+  -o-transition: visibility linear 300ms, opacity linear 300ms;
+  transition: visibility linear 300ms, opacity linear 300ms;
+}
+
+.show-social-links {
+  visibility: visible;
+  opacity: 1;
+}
+
+.hide-social-links {
+
 }
 
 .notices, .notices > p {
@@ -223,14 +330,6 @@ ul.menu-main > li:nth-child(4):hover ul.sub-menu {
   margin-left: 5px;
   margin-right: 5px;
   width: 20px; height: 20px;
-}
-
-.show-social-links {
-  visibility: visible;
-  opacity: 1;
-}
-
-.hide-social-links {
 }
 
 .social-links > ul{
@@ -259,41 +358,80 @@ ul.menu-main > li:nth-child(4):hover ul.sub-menu {
   overflow-y: scroll;
 }
 
-.page-1, .page-2 {
+.page-1, .page-2, .page-3, .page-4 {
   position: relative;
   width: 100%; height: 100%;
-  background-size:cover;
+  background-color: #000000;
+  background-size:contain;
   background-repeat: no-repeat;
-  background-image: url('/assets/page-1.1.png');
+  background-position: center;
 }
 
-.page-1-overlay {
+.page-1 {
   background-image: url('/assets/page-1.2.png');
+}
+
+.page-2 {
+  background-image: url('/assets/page-2.2.png');
+}
+
+.page-3 {
+  background-image: url('/assets/page-3.2.png');
+}
+
+.page-4 {
+  background-image: url('/assets/page-4.2.png');
+}
+
+.page-1-overlay, .page-2-overlay, .page-3-overlay, .page-4-overlay {
   position: absolute;
   left: 0px; top: 0px;
   width: 100%; height: 100%;
-  background-size:cover;
+  background-size:contain;
+  background-position: center;
+
+  background-color: #000000;
   background-repeat: no-repeat;
   visibility: visible;
   opacity: 1;
-  transition: visibility 1000s linear 1000s, opacity 1000ms;
+
+  -webkit-transition: visibility linear 1000s, opacity linear 1000ms;
+  -moz-transition: visibility linear 1000s, opacity linear 1000ms;
+  -o-transition: visibility linear 1000s, opacity linear 1000ms;
+  transition: visibility linear 1000s, opacity linear 1000ms;
 }
 
-.hide-page-1-overlay {
+.page-1-overlay {
+  background-image: url('/assets/page-1.1.png');
+}
+
+.page-2-overlay {
+  background-image: url('/assets/page-2.1.png');
+}
+
+.page-3-overlay {
+  background-image: url('/assets/page-3.1.png');
+}
+
+.page-4-overlay {
+  background-image: url('/assets/page-4.1.png');
+}
+
+.hide-page-1-overlay, .hide-page-2-overlay, .hide-page-3-overlay, .hide-page-4-overlay {
   visibility: hidden;
   opacity: 0;
-
 }
 
 .page-content {
   position: relative;
   width: 100%; height: 100%;
+  max-width: 1080px;
 }
-
 
 .page-content-inner {
   padding: 50px 50px 100px 100px;
   width: 100%; height: auto;
+  max-width: 1060px;
   position: absolute;
   bottom: 0px;
   right: 0px;
@@ -303,8 +441,16 @@ ul.menu-main > li:nth-child(4):hover ul.sub-menu {
 .page-title {
   visibility: hidden;
   opacity: 0;
-  transition: visibility 0s linear 0s, opacity 1000ms;
 
+  -webkit-transition: visibility 400ms linear 500ms, opacity 400ms linear 500ms;
+  -moz-transition: visibility 400ms linear 500ms, opacity 400ms linear 500ms;
+  -o-transition: visibility 400ms linear 500ms, opacity 400ms linear 500ms;
+  transition: visibility 400ms linear 500ms, opacity 400ms linear 500ms;
+}
+
+.show-page-title {
+  opacity: 1;
+  visibility: visible;
 }
 
 .page-title > p {
@@ -318,12 +464,6 @@ ul.menu-main > li:nth-child(4):hover ul.sub-menu {
   direction: rtl;
 }
 
-
-.show-page-title {
-  opacity: 1;
-  visibility: visible;
-}
-
 .page-seperator {
   height: 1px; width: 100%;
   background: #FFFFFF;
@@ -331,8 +471,11 @@ ul.menu-main > li:nth-child(4):hover ul.sub-menu {
   float: right;
   width: 80%;
   opacity: 0;
-  transition: all 0.6s linear;
-  transition-delay: 200ms;
+  -webkit-transition: width 400ms linear 1000ms, opacity 400ms linear 1000ms;
+  -moz-transition: width 400ms linear 1000ms, opacity 400ms linear 1000ms;
+  -o-transition: width 400ms linear 1000ms, opacity 400ms linear 1000ms;
+  transition: width 400ms linear 1000ms, opacity 400ms linear 1000ms;
+
 }
 
 .show-page-seperator {
@@ -343,8 +486,11 @@ ul.menu-main > li:nth-child(4):hover ul.sub-menu {
 .page-descp {
   visibility: hidden;
   opacity: 0;
-  transition: visibility 0s linear 0s, opacity 1000ms;
-  transition-delay: 400ms;
+
+  -webkit-transition: visibility 400ms linear 1500ms, opacity 400ms linear 1500ms;
+  -moz-transition: visibility 400ms linear 1500ms, opacity 400ms linear 1500ms;
+  -o-transition: visibility 400ms linear 1500ms, opacity 400ms linear 1500ms;
+  transition: visibility 400ms linear 1500ms, opacity 400ms linear 1500ms;
 }
 
 .show-page-descp {
@@ -370,11 +516,8 @@ a.facebook {
 
 }
 
-
-
-
-
-
+/*scrollbar style*/
+/* TODO: Use an external javascript based scrollbar instead */
 ::-webkit-scrollbar-track
 {
 	border-radius: 0px !important;

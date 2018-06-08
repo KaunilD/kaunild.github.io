@@ -19,6 +19,9 @@ class App extends Component {
       page1Seperator: false,
       page1Title: false,
       page1Overlay: false,
+      page2Overlay: false,
+      page3Overlay: false,
+      page4Overlay: false,
       profileText: false,
       menu: false
     }
@@ -45,7 +48,14 @@ class App extends Component {
     let scrollTop = ReactDOM.findDOMNode(this.content).scrollTop
     console.log(scrollTop, ReactDOM.findDOMNode(this.page1).clientHeight)
     if (scrollTop >= ReactDOM.findDOMNode(this.page1).clientHeight) {
+      this.setState({page2Overlay: true})
+    }
+    if (scrollTop >= ReactDOM.findDOMNode(this.page1).clientHeight + ReactDOM.findDOMNode(this.page2).clientHeight) {
+      this.setState({page3Overlay: true})
+    }
 
+    if (scrollTop >= ReactDOM.findDOMNode(this.page1).clientHeight + ReactDOM.findDOMNode(this.page2).clientHeight + ReactDOM.findDOMNode(this.page3).clientHeight) {
+      this.setState({page4Overlay: true})
     }
   }
 
@@ -53,24 +63,9 @@ class App extends Component {
     return (
       <div className='content-wrapper'>
         <div className='sidebar'>
-          <Particles
-            params={{
-              particles: {
-                line_linked: {
-                  shadow: {
-                    enable: true,
-                    color: '#3CA9D1',
-                    blur: 2
-                  }
-                }
-              }
-            }}
-            className='particles-wrapper'
-            canvasClassName='particles'
-          />
           <div className='profile'>
             <div
-              className={this.state.profileText ? 'profile-text hide-profile-text' : 'profile-text'}
+              className={this.state.profileText ? 'profile-text slideup-profile-text' : 'profile-text'}
               ref={(element) => this.profileText = element}
               >
               <div className='title'>
@@ -79,16 +74,18 @@ class App extends Component {
               <div className='subtitle'><span><ScriptString onComplete={() => this.toggleSocialLinks()} string={this.state.subTitle}/></span></div>
             </div>
 
-            <div className={!this.state.menu ? 'menu hide-menu' : 'menu'}>
+            <div className={this.state.menu ? 'menu show-menu' : 'menu'}>
               <ul className='menu-main'>
                 <li>
-                  <a>About</a>
+                  <a href='#'>
+                    About
+                  </a>
                 </li>
                 <li>
                   <a>Publications</a>
                 </li>
                 <li>
-                  <a>Projects <span className='expand'>+</span></a>
+                  <a href='#'>Projects</a>
                   <ul className='sub-menu'>
                     <li>
                       COBRIX
@@ -114,7 +111,7 @@ class App extends Component {
                   </ul>
                 </li>
                 <li>
-                  <a>Experiments <span className='expand'>+</span></a>
+                  <a href='#'>Experiments</a>
                   <ul className='sub-menu'>
                     <li>
                       REACT JS
@@ -153,7 +150,7 @@ class App extends Component {
               </ul>
             </div>
             <div className='notices'>
-              <p>Yes, this is built with <img src='favicon.ico' /> Get over it.</p>
+              <p>Built with <img src='favicon.ico' /></p>
             </div>
           </div>
 
@@ -166,7 +163,7 @@ class App extends Component {
               <div className='page-content-inner'>
                 <div className={this.state.page1Title ? 'page-title show-page-title' : 'page-title'}>
                   <p>
-                    About Me
+                    !Hi
                   </p>
                 </div>
                 <div className={this.state.page1Seperator ? 'page-seperator show-page-seperator' : 'page-seperator'} />
@@ -186,8 +183,8 @@ class App extends Component {
             </div>
           </div>
 
-          <div className='page-2'>
-            <div className={!this.state.page1Overlay ? 'page-2-overlay' : 'page-2-overlay hide-page-2-overlay'} />
+          <div className='page-2' ref={(element) => this.page2 = element}>
+            <div className={!this.state.page2Overlay ? 'page-2-overlay' : 'page-2-overlay hide-page-2-overlay'} />
             <div className='page-content'>
               <div className='page-content-inner'>
                 <div className={this.state.page1Title ? 'page-title show-page-title' : 'page-title'}>
@@ -210,6 +207,14 @@ class App extends Component {
                 </div>
               </div>
             </div>
+          </div>
+
+          <div className='page-3' ref={(element) => this.page3 = element}>
+            <div className={!this.state.page3Overlay ? 'page-3-overlay' : 'page-3-overlay hide-page-3-overlay'} />
+          </div>
+
+          <div className='page-4' ref={(element) => this.page4 = element}>
+            <div className={!this.state.page4Overlay ? 'page-4-overlay' : 'page-4-overlay hide-page-4-overlay'} />
           </div>
         </div>
       </div>
