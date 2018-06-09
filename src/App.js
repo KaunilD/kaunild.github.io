@@ -180,22 +180,20 @@ class App extends Component {
                   <br/>
                   passionate about building tools and solving challenges that improve people's lives.
                   </p>
-                  <p>
-                    <div className='left interests'>
-                      <span className='title-hi'>My areas of</span>
-                      <span className='h1'>RESEARCH </span>
-                      <span className='h4'>Machine Learning</span>
-                      <span className='h4'>Computer Vision</span>
-                      <span className='h4'>Data Science</span>
-                    </div>
-                    <div className='right education'>
-                      <span className='title-hi'>My background</span>
-                      <span className='h1'>EDUCATION</span>
-                      <span className='h4'>B.Tech. in</span>
-                      <span className='h4'>CS</span>
-                      <span className='h4'>University of Mumbai</span>
-                    </div>
-                  </p>
+                  <div className='left interests'>
+                    <span className='title-hi'>My areas of</span>
+                    <span className='h1'>RESEARCH </span>
+                    <span className='h4'>Machine Learning</span>
+                    <span className='h4'>Computer Vision</span>
+                    <span className='h4'>Data Science</span>
+                  </div>
+                  <div className='right education'>
+                    <span className='title-hi'>My background</span>
+                    <span className='h1'>EDUCATION</span>
+                    <span className='h4'>B.Tech. in</span>
+                    <span className='h4'>CS</span>
+                    <span className='h4'>University of Mumbai</span>
+                  </div>
                 </div>
               </div>
             </div>
@@ -210,7 +208,9 @@ class App extends Component {
                     PUBLICATIONS
                   </p>
                 </div>
+
                 {/*<div className={this.state.page1Seperator ? 'page-seperator show-page-seperator' : 'page-seperator'} />*/}
+
                 <div className={this.state.page1Descp ? 'page-descp show-page-descp' : 'page-descp'}>
                   <div className='page-item-full'>
                     <span className='h4'>Generative Street Addresses from Satellite Imagery</span>
