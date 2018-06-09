@@ -3,9 +3,9 @@ import ReactDOM from 'react-dom'
 import Particles from 'react-particles-js'
 
 import ScriptString from './components/ScriptString'
-
 import './App.css'
 
+var smoothScroll = require('smoothscroll')
 
 class App extends Component {
 
@@ -22,6 +22,7 @@ class App extends Component {
       page2Overlay: false,
       page3Overlay: false,
       page4Overlay: false,
+      page5Overlay: false,
       profileText: false,
       menu: false
     }
@@ -57,6 +58,15 @@ class App extends Component {
     if (scrollTop >= ReactDOM.findDOMNode(this.page1).clientHeight + ReactDOM.findDOMNode(this.page2).clientHeight + ReactDOM.findDOMNode(this.page3).clientHeight) {
       this.setState({page4Overlay: true})
     }
+    if (scrollTop >= ReactDOM.findDOMNode(this.page1).clientHeight + ReactDOM.findDOMNode(this.page2).clientHeight + ReactDOM.findDOMNode(this.page3).clientHeight + ReactDOM.findDOMNode(this.page5).clientHeight) {
+      this.setState({page5Overlay: true})
+    }
+  }
+
+  handleLinkClick (event, target) {
+    event.preventDefault()
+    smoothScroll(target, 500, null, this.content)
+    console.log(event)
   }
 
   render () {
@@ -69,23 +79,23 @@ class App extends Component {
               ref={(element) => this.profileText = element}
               >
               <div className='title'>
-                KAUNIL DHRUV
+                <span className='title-hi'>Hi I'm</span>
+                <ScriptString onComplete={() => this.toggleSocialLinks()} string="KAUNIL DHRUV"/>
               </div>
-              <div className='subtitle'><span><ScriptString onComplete={() => this.toggleSocialLinks()} string={this.state.subTitle}/></span></div>
             </div>
 
             <div className={this.state.menu ? 'menu show-menu' : 'menu'}>
               <ul className='menu-main'>
                 <li>
-                  <a href='#'>
+                  <a onClick={(e) => this.handleLinkClick(e, this.page1)}>
                     About
                   </a>
                 </li>
                 <li>
-                  <a>Publications</a>
+                  <a onClick={(e) => this.handleLinkClick(e, this.page2)}>Publications</a>
                 </li>
                 <li>
-                  <a href='#'>Projects</a>
+                  <a onClick={(e) => this.handleLinkClick(e, this.page3)}>Projects</a>
                   <ul className='sub-menu'>
                     <li>
                       COBRIX
@@ -111,7 +121,7 @@ class App extends Component {
                   </ul>
                 </li>
                 <li>
-                  <a href='#'>Experiments</a>
+                  <a onClick={(e) => this.handleLinkClick(e, this.page4)}>Experiments</a>
                   <ul className='sub-menu'>
                     <li>
                       REACT JS
@@ -125,11 +135,11 @@ class App extends Component {
                   </ul>
                 </li>
 
-                <li>
+                <li onClick={(e) => this.handleLinkClick(e, this.page5)}>
                   <a>Resume</a>
                 </li>
                 <li>
-                  <a>Contact</a>
+                  <a onClick={(e) => this.handleLinkClick(e, this.page6)}>Contact</a>
                 </li>
               </ul>
             </div>
@@ -150,7 +160,7 @@ class App extends Component {
               </ul>
             </div>
             <div className='notices'>
-              <p>Built with <img src='favicon.ico' /></p>
+              <p>Built with <img src='react.png' /></p>
             </div>
           </div>
 
@@ -162,21 +172,29 @@ class App extends Component {
             <div className='page-content'>
               <div className='page-content-inner'>
                 <div className={this.state.page1Title ? 'page-title show-page-title' : 'page-title'}>
-                  <p>
-                    !Hi
-                  </p>
                 </div>
-                <div className={this.state.page1Seperator ? 'page-seperator show-page-seperator' : 'page-seperator'} />
+                {/*<div className={this.state.page1Seperator ? 'page-seperator show-page-seperator' : 'page-seperator'} />*/}
                 <div className={this.state.page1Descp ? 'page-descp show-page-descp' : 'page-descp'}>
                   <p>
-                  I joined <a target='blank' className='facebook' href='https://research.fb.com/people/dhruv-kaunil/'>&nbsp;Facebook&nbsp;</a> as a Software Engineer in 2016 where I work on
-                  computer vision and machine learning problems in Connectivity Lab
-                  for the Smart Addresses Project.
-                  <br/><br/>
-                  My research interests include
-                  inter-disciplinary applications of Machine Learning, Computer Vision,
-                  and Natural Language Processing in Affective Computing and HCI
-                  for the Blind Visually Impaired people.
+                  I'm a curious Software Engineer
+                  <br/>
+                  passionate about building tools and solving challenges that improve people's lives.
+                  </p>
+                  <p>
+                    <div className='left interests'>
+                      <span className='title-hi'>My areas of</span>
+                      <span className='h1'>RESEARCH </span>
+                      <span className='h4'>Machine Learning</span>
+                      <span className='h4'>Computer Vision</span>
+                      <span className='h4'>Data Science</span>
+                    </div>
+                    <div className='right education'>
+                      <span className='title-hi'>My background</span>
+                      <span className='h1'>EDUCATION</span>
+                      <span className='h4'>B.Tech. in</span>
+                      <span className='h4'>CS</span>
+                      <span className='h4'>University of Mumbai</span>
+                    </div>
                   </p>
                 </div>
               </div>
@@ -188,23 +206,33 @@ class App extends Component {
             <div className='page-content'>
               <div className='page-content-inner'>
                 <div className={this.state.page1Title ? 'page-title show-page-title' : 'page-title'}>
-                  <p>
-                    Publications
+                  <p data-value='PUBLICATIONS'>
+                    PUBLICATIONS
                   </p>
                 </div>
-                <div className={this.state.page1Seperator ? 'page-seperator show-page-seperator' : 'page-seperator'} />
+                {/*<div className={this.state.page1Seperator ? 'page-seperator show-page-seperator' : 'page-seperator'} />*/}
                 <div className={this.state.page1Descp ? 'page-descp show-page-descp' : 'page-descp'}>
-                  <p>
-                  I joined <a target='blank' className='facebook' href='https://research.fb.com/people/dhruv-kaunil/'>&nbsp;Facebook&nbsp;</a> as a Software Engineer in 2016 where I work on
-                  computer vision and machine learning problems in Connectivity Lab
-                  for the Smart Addresses Project.
-                  <br/><br/>
-                  My research interests include
-                  inter-disciplinary applications of Machine Learning, Computer Vision,
-                  and Natural Language Processing in Affective Computing and HCI
-                  for the Blind Visually Impaired people.
-                  </p>
+                  <div className='page-item-full'>
+                    <span className='h4'>Generative Street Addresses from Satellite Imagery</span>
+                    <span className='h6'>March 08, 2018</span>
+                    <span className='h6 light'>
+                      Ilke Demir, Forest Hughes, Aman Raj, <span className='dark'>Kaunil Dhruv</span>,<br/>
+                      Suryanarayana Murthy Muddala, Sanyam Garg,<br/>
+                      Barrett Doo, Ramesh Raskar
+                    </span>
+                  </div>
+                  <div className='page-item-full'>
+                    <span className='h4'>Generative Street Addresses from Satellite Imagery</span>
+                    <span className='h6'>March 08, 2018</span>
+                    <span className='h6 light'>
+                      Ilke Demir, Forest Hughes, Aman Raj, <span className='dark'>Kaunil Dhruv</span>,<br/>
+                      Suryanarayana Murthy Muddala, Sanyam Garg,<br/>
+                      Barrett Doo, Ramesh Raskar
+                    </span>
+                  </div>
                 </div>
+
+
               </div>
             </div>
           </div>
@@ -215,6 +243,10 @@ class App extends Component {
 
           <div className='page-4' ref={(element) => this.page4 = element}>
             <div className={!this.state.page4Overlay ? 'page-4-overlay' : 'page-4-overlay hide-page-4-overlay'} />
+          </div>
+
+          <div className='page-5' ref={(element) => this.page5 = element}>
+            <div className={!this.state.page5Overlay ? 'page-5-overlay' : 'page-5-overlay hide-page-5-overlay'} />
           </div>
         </div>
       </div>
