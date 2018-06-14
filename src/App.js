@@ -16,8 +16,16 @@ class App extends Component {
       subTitle: 'SOFTWARE ENGINEER',
       socialLinks: false,
       page1Descp: false,
+      page2Descp: false,
+      page3Descp: true,
+      page4Descp: true,
+      page5Descp: true,
       page1Seperator: false,
       page1Title: false,
+      page2Title: false,
+      page3Title: true,
+      page4Title: true,
+      page5Title: true,
       page1Overlay: false,
       page2Overlay: false,
       page3Overlay: false,
@@ -47,7 +55,6 @@ class App extends Component {
 
   onScroll () {
     let scrollTop = ReactDOM.findDOMNode(this.content).scrollTop
-    console.log(scrollTop, ReactDOM.findDOMNode(this.page1).clientHeight)
     if (scrollTop >= ReactDOM.findDOMNode(this.page1).clientHeight) {
       this.setState({page2Overlay: true})
     }
@@ -65,8 +72,30 @@ class App extends Component {
 
   handleLinkClick (event, target) {
     event.preventDefault()
-    smoothScroll(target, 500, null, this.content)
-    console.log(event)
+    smoothScroll(
+      target,
+      500,
+      null,
+      this.content
+    )
+  }
+
+  handleNavItemClick (event) {
+    event.preventDefault()
+    if (ReactDOM.findDOMNode(event.target).classList.contains('nav_item-current')) {
+      return false
+    }
+    let items = ReactDOM.findDOMNode(event.target).parentNode.childNodes
+    items.forEach((item) => {
+      item.classList.remove('nav_item-current')
+    })
+    ReactDOM.findDOMNode(event.target).classList.add('nav_item-current')
+    smoothScroll(
+      document.getElementById(event.target.getAttribute('data')).getBoundingClientRect().top + this.publications.getBoundingClientRect().top,
+      500,
+      null,
+      ReactDOM.findDOMNode(this.publications)
+    )
   }
 
   render () {
@@ -144,8 +173,6 @@ class App extends Component {
               </ul>
             </div>
 
-
-
             <div ref={(elt) => this.socialLinks = elt} className={this.state.socialLinks ? 'social-links show-social-links' : 'social-links'}>
               <ul>
                 <li>
@@ -171,8 +198,7 @@ class App extends Component {
             <div className={!this.state.page1Overlay ? 'page-1-overlay' : 'page-1-overlay hide-page-1-overlay'} />
             <div className='page-content'>
               <div className='page-content-inner'>
-                <div className={this.state.page1Title ? 'page-title show-page-title' : 'page-title'}>
-                </div>
+
                 {/*<div className={this.state.page1Seperator ? 'page-seperator show-page-seperator' : 'page-seperator'} />*/}
                 <div className={this.state.page1Descp ? 'page-descp show-page-descp' : 'page-descp'}>
                   <p>
@@ -200,7 +226,6 @@ class App extends Component {
           </div>
 
           <div className='page-2' ref={(element) => this.page2 = element}>
-            <div className={!this.state.page2Overlay ? 'page-2-overlay' : 'page-2-overlay hide-page-2-overlay'} />
             <div className='page-content'>
               <div className='page-content-inner'>
                 <div className={this.state.page1Title ? 'page-title show-page-title' : 'page-title'}>
@@ -209,40 +234,139 @@ class App extends Component {
                   </p>
                 </div>
 
-                {/*<div className={this.state.page1Seperator ? 'page-seperator show-page-seperator' : 'page-seperator'} />*/}
-
                 <div className={this.state.page1Descp ? 'page-descp show-page-descp' : 'page-descp'}>
-                  <div className='page-item-full'>
-                    <span className='h4'>Generative Street Addresses from Satellite Imagery</span>
-                    <span className='h6'>March 08, 2018</span>
-                    <span className='h6 light'>
-                      Ilke Demir, Forest Hughes, Aman Raj, <span className='dark'>Kaunil Dhruv</span>,<br/>
-                      Suryanarayana Murthy Muddala, Sanyam Garg,<br/>
-                      Barrett Doo, Ramesh Raskar
-                    </span>
-                  </div>
-                  <div className='page-item-full'>
-                    <span className='h4'>Generative Street Addresses from Satellite Imagery</span>
-                    <span className='h6'>March 08, 2018</span>
-                    <span className='h6 light'>
-                      Ilke Demir, Forest Hughes, Aman Raj, <span className='dark'>Kaunil Dhruv</span>,<br/>
-                      Suryanarayana Murthy Muddala, Sanyam Garg,<br/>
-                      Barrett Doo, Ramesh Raskar
-                    </span>
+                  <nav  class='page-navigation'>
+                    <ul>
+                      <li onClick={(e) => this.handleNavItemClick(e)} className='nav_item nav_item-current' data='01'><span class="nav_item-title">01</span></li>
+                      <li onClick={(e) => this.handleNavItemClick(e)} className='nav_item' data='02'><span class="nav_item-title">02</span></li>
+                    </ul>
+                  </nav>
+                  <div className='page-items-container' ref={(element) => this.publications = element}>
+
+                    <div className='page-item-full' id='01'>
+                      <div>
+                        <span className='h4'>Generative Street Addresses from<br />Satellite Imagery</span>
+                        <span className='h6 light'>March 08, 2018</span>
+                        <span className='h6'>
+                          Ilke Demir, Forest Hughes, Aman Raj, <span className='underline'>Kaunil Dhruv</span>
+                        </span>
+                        <span className='h6'>
+                          Suryanarayana Murthy, Sanyam Garg, Barrett Doo
+                        </span>
+                        <span className='h6'>
+                          Ramesh Raskar
+                        </span>
+                        <br />
+                        <span className='h4'>Abstract</span>
+                        <span className='h6 justify'>
+                          We describe our automatic generative algorithm to create street addresses (Robocodes) from satellite images by learning and labeling regions, roads, and blocks. 75% of the world lacks street addresses [12 ]. According to the United Nations, this means 4 billion people are ‘invisible’. Recent initiatives tend to name unknown areas by geocoding, which uses latitude and longitude information. Nevertheless settlements abut roads and such addressing schemes are not coherent with the road topology. Instead, our algorithm starts with extracting roads and junctions from satellite imagery utilizing deep learning. Then, it uniquely labels the regions, roads, and houses using some graph- and proximity-based algorithms. We present our results on both cities in mapped areas and in developing countries. We also compare productivity based on current ad-hoc and new complete addresses. We conclude with contrasting our generative addresses to current industrial and open solutions.
+                        </span>
+                    </div>
+                    </div>
+
+                    <div className='page-item-full' id='02'>
+                      <div>
+
+                        <span className='h4'>Robocodes: Towards Generative Street<br/>Addresses from Satellite Imagery</span>
+                        <span className='h6 light'>CVPR 2017 - July, 2017</span>
+                        <span className='h6'>
+                          Ilke Demir, Forest Hughes, Aman Raj
+                        </span>
+                        <span className='h6'>
+                          Kleovoulos Tsourides, Divyaa Ravichandran, <span className='underline'>Kaunil Dhruv</span>
+                        </span>
+                        <span className='h6'>
+                         Suryanarayana Murthy, Sanyam Garg, Jatin Malhotra
+                        </span>
+                        <span className='h6'>
+                          Barrett Doo, Grace Kermani, Ramesh Raskar
+                        </span>
+                        <span className='h4'>Abstract</span>
+                        <span className='h6 justify'>
+                          We describe our automatic generative algorithm to create street addresses from satellite images by learning and labeling roads, regions, and address cells. Currently, 75% of the world’s roads lack adequate street addressing systems. Recent geocoding initiatives tend to convert pure latitude and longitude information into a memorable form for unknown areas. However, settlements are identified by streets, and such addressing schemes are not coherent with the road topology. Instead, we propose a generative address design that maps the globe in accordance with streets. Our algorithm starts with extracting roads from satellite imagery by utilizing deep learning. Then, it uniquely labels the regions, roads, and structures using some graph- and proximity-based algorithms. We also extend our addressing scheme to (i) cover inaccessible areas following similar design principles; (ii) be inclusive and flexible for changes on the ground; and (iii) lead as a pioneer for a unified street-based global geodatabase. We present our results on an example of a developed city and multiple undeveloped cities. We also compare productivity on the basis of current ad hoc and new complete addresses. We conclude by contrasting our generative addresses to current industrial and open solutions.
+                        </span>
+                      </div>
+                    </div>
                   </div>
                 </div>
-
-
               </div>
             </div>
           </div>
 
           <div className='page-3' ref={(element) => this.page3 = element}>
-            <div className={!this.state.page3Overlay ? 'page-3-overlay' : 'page-3-overlay hide-page-3-overlay'} />
+            <div className='page-content'>
+              <div className='page-content-inner'>
+                <div className={this.state.page3Title ? 'page-title show-page-title' : 'page-title'}>
+                  <p data-value='PROJECTS'>
+                    PORJECTS
+                  </p>
+                </div>
+                <div className={this.state.page3Descp ? 'page-descp show-page-descp' : 'page-descp'}>
+                  <nav  class='page-navigation'>
+                    <ul>
+                      <li onClick={(e) => this.handleNavItemClick(e)} className='nav_item nav_item-current' data='01'><span class="nav_item-title">01</span></li>
+                      <li onClick={(e) => this.handleNavItemClick(e)} className='nav_item' data='02'><span class="nav_item-title">02</span></li>
+                      <li onClick={(e) => this.handleNavItemClick(e)} className='nav_item' data='03'><span class="nav_item-title">03</span></li>
+                      <li onClick={(e) => this.handleNavItemClick(e)} className='nav_item' data='02'><span class="nav_item-title">04</span></li>
+                      <li onClick={(e) => this.handleNavItemClick(e)} className='nav_item' data='01'><span class="nav_item-title">05</span></li>
+                      <li onClick={(e) => this.handleNavItemClick(e)} className='nav_item' data='02'><span class="nav_item-title">05</span></li>
+                    </ul>
+                  </nav>
+                  <div className='page-items-container' ref={(element) => this.projects = element}>
+
+                    <div className='page-item-full' id='01'>
+                      <div>
+                        <span className='h4'>COBRIX</span>
+                      </div>
+                    </div>
+                    <div className='page-item-full' id='02'>
+                      <div>
+                        <span className='h4'>DISGUISED FACE DETECTION</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
 
           <div className='page-4' ref={(element) => this.page4 = element}>
-            <div className={!this.state.page4Overlay ? 'page-4-overlay' : 'page-4-overlay hide-page-4-overlay'} />
+            <div className='page-content'>
+              <div className='page-content-inner'>
+                <div className={this.state.page4Title ? 'page-title show-page-title' : 'page-title'}>
+                  <p data-value='EXPERIMENTS'>
+                    EXPERIMENTS
+                  </p>
+                </div>
+                <div className={this.state.page4Descp ? 'page-descp show-page-descp' : 'page-descp'}>
+                  <nav  class='page-navigation'>
+                    <ul>
+                      <li onClick={(e) => this.handleNavItemClick(e)} className='nav_item nav_item-current' data='01'><span class="nav_item-title">01</span></li>
+                      <li onClick={(e) => this.handleNavItemClick(e)} className='nav_item' data='02'><span class="nav_item-title">02</span></li>
+                      <li onClick={(e) => this.handleNavItemClick(e)} className='nav_item' data='03'><span class="nav_item-title">03</span></li>
+                    </ul>
+                  </nav>
+                  <div className='page-items-container' ref={(element) => this.experiments = element}>
+
+                    <div className='page-item-full' id='01'>
+                      <div>
+                        <span className='h4'>MACHINE LEARNING</span>
+                      </div>
+                    </div>
+                    <div className='page-item-full' id='02'>
+                      <div>
+                        <span className='h4'>REACT JS</span>
+                      </div>
+                    </div>
+                    <div className='page-item-full' id='03'>
+                      <div>
+                        <span className='h4'>COMPUTER VISION</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
 
           <div className='page-5' ref={(element) => this.page5 = element}>
