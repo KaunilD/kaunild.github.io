@@ -1,8 +1,8 @@
 import React from 'react'
 
-import './UserProfile.css'
+import './Experiments.css'
 
-class UserProfile extends React.Component {
+class Experiments extends React.Component {
   constructor (props) {
     super(props)
     this.state = {
@@ -17,4 +17,4 @@ class UserProfile extends React.Component {
   }
 }
 
-export default UserProfile
+export default Experiments

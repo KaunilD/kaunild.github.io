@@ -4,11 +4,22 @@ html, body, div#root {
 }
 
 body{
+  position: absolute;
   margin: 0 auto;
-
-  overflow-x: hidden;
+  background-color: #FFFFFF;
+  overflow: hidden;
 }
 
+div#root {
+  position: absolute;
+  top: 0px; left: 0px;
+}
+
+#root > div:first-child {
+  position: absolute;
+  top: 0px; left: 0px;
+  width: 100%; height: 100%;
+}
 /*
 FONTS
  */
@@ -67,7 +78,7 @@ src: url('/assets/fonts/Theinhardt-Md.woff2');
   float: left;
   width: 33.33%;
   height: 100%;
-  background: #FFFFFF;
+  background: transparent;
   overflow: hidden;
 }
 
@@ -117,6 +128,7 @@ canvas.particles {
 .slideup-profile-text {
   top: 100px;
 }
+/* LIGHT*/
 
 .profile-text > .title {
   font-size: 52px;
@@ -124,7 +136,13 @@ canvas.particles {
   color: #000000;
 
 }
-
+/* DARK */
+.profile-text > .title {
+  font-size: 52px;
+  font-family: RalewayBold;
+  color: #FFFFFF;
+}
+/* LIGHT */
 span.title-hi {
   display: block;
   font-size: 18px;
@@ -135,7 +153,17 @@ span.title-hi {
   font-family: RalewaySemiBold;
 }
 
+/*DARK*/
 
+span.title-hi {
+  display: block;
+  font-size: 18px;
+  clear: both;
+  width: 100%;
+  height: auto;
+  color: #DDDDDD;
+  font-family: RalewaySemiBold;
+}
 .profile-text > .subtitle {
   font-size: 18px;
   padding-right: 0px;
@@ -245,13 +273,13 @@ ul.menu-main > li:nth-child(5) > a::before {
 ul.menu-main > li:nth-child(6) > a::before {
   background: #760089;
 }
-
+/*LIGHT*/
 ul.menu-main > li > a {
   width: auto !important;
   height: 100%;
   margin-left: 4px;
   padding: 0px 5px;
-  color: inherit;
+  color: #000000;
   -webkit-transition: background 100ms linear, color 100ms linear, margin 100ms linear;
   -moz-transition: background 100ms linear, color 100ms linear, margin 100ms linear;
   -o-transition: background 100ms linear, color 100ms linear, margin 100ms linear;
@@ -263,9 +291,30 @@ ul.menu-main > li > a {
   transition-timing-function: cubic-bezier(0.7, 0, 0.3, 1);
 }
 
+/*DARK*/
+
+ul.menu-main > li > a {
+  width: auto !important;
+  height: 100%;
+  margin-left: 4px;
+  padding: 0px 5px;
+  color: #FFFFFF;
+  -webkit-transition: background 100ms linear, color 100ms linear, margin 100ms linear;
+  -moz-transition: background 100ms linear, color 100ms linear, margin 100ms linear;
+  -o-transition: background 100ms linear, color 100ms linear, margin 100ms linear;
+  transition: background 100ms linear, color 100ms linear, margin 100ms linear;
+
+  -webkit-transition-timing-function: cubic-bezier(0.7, 0, 0.3, 1);
+  -moz-transition-timing-function: cubic-bezier(0.7, 0, 0.3, 1);
+  -o-transition-timing-function: cubic-bezier(0.7, 0, 0.3, 1);
+  transition-timing-function: cubic-bezier(0.7, 0, 0.3, 1);
+}
+
+
 ul.menu-main > li:hover a{
   color: #FFFFFF;
 }
+
 
 ul.menu-main > li:hover a::before{
   width: 100%;
@@ -332,7 +381,6 @@ ul.menu-main > li:nth-child(4):hover ul.sub-menu {
   transform: translate(-50%, -50%);
   visibility: hidden;
   opacity: 0;
-
   -webkit-transition: visibility linear 300ms, opacity linear 300ms;
   -moz-transition: visibility linear 300ms, opacity linear 300ms;
   -o-transition: visibility linear 300ms, opacity linear 300ms;
@@ -347,15 +395,28 @@ ul.menu-main > li:nth-child(4):hover ul.sub-menu {
 .hide-social-links {
 
 }
-
+/*LIGHT*/
 .notices, .notices > p {
   position: absolute;
   bottom: 0%;
   width: 100%;
   text-align: center;
   font-family: RalewayMedium;
+  color: #000000;
   padding: 0px;
 }
+/*DARK*/
+.notices, .notices > p {
+  position: absolute;
+  bottom: 0%;
+  width: 100%;
+  text-align: center;
+  font-family: RalewayMedium;
+  color: #FFFFFF;
+  padding: 0px;
+}
+
+
 
 .notices > p > img {
   margin-bottom: -5px;
@@ -375,12 +436,21 @@ ul.menu-main > li:nth-child(4):hover ul.sub-menu {
   cursor: pointer;
   margin: 0px 10px;
 }
+/*LIGHT*/
+.social-links > ul > li > img {
+  width: 25px;
+  height: 25px;
+
+}
+/*DARK*/
 
 .social-links > ul > li > img {
   width: 25px;
   height: 25px;
-}
 
+  filter: invert(100%);
+  -webkit-filter: invert(100%);
+}
 .content {
   margin: 0px;
   width: 100%;
@@ -391,12 +461,24 @@ ul.menu-main > li:nth-child(4):hover ul.sub-menu {
   overflow-x: hidden;
   font-family: Theinhardt-Md;
 }
-
+/*LIGHT*/
 .page-1, .page-2, .page-3, .page-4, .page-5 {
   position: relative;
-  width: 100%; height: 100%;
+  width: 100%; min-height: 100%;
+  max-height: auto;
   color: #000000;
-  background-color: #FFFFFF;
+  background-color: transparent;
+  background-size:contain;
+  background-repeat: no-repeat;
+  background-position: right top;
+}
+/*DARK*/
+.page-1, .page-2, .page-3, .page-4, .page-5 {
+  position: relative;
+  width: 100%; min-height: 100%;
+  max-height: auto;
+  color: #FFFFFF;
+  background-color: transparent;
   background-size:contain;
   background-repeat: no-repeat;
   background-position: right top;
@@ -581,11 +663,10 @@ ul.menu-main > li:nth-child(4):hover ul.sub-menu {
 
 .page-descp {
   visibility: hidden;
-  height: 500px;
+  height: auto;
   opacity: 0;
   padding-top: 50px;
   width: 100%;
-  max-height: 500px;
   position: relative;
   display: table;
   -webkit-transition: visibility 400ms linear 1500ms, opacity 400ms linear 1500ms;
@@ -604,23 +685,85 @@ ul.menu-main > li:nth-child(4):hover ul.sub-menu {
 }
 
 .page-items-container {
-  overflow-x: hidden;
   position: relative;
-  right: -20px;
-  padding-right: 20px;
-  height: 500px;
-  overflow-y: scroll;
+  height: auto;
 }
 
-.page-item-full {
+
+
+.row {
   width: 100%;
-  min-height: 100%;
-  max-height: auto;
-  text-align: right;
+  height: auto;
+  position: relative;
+  box-sizing: border-box;
+  background: #000000;
 }
 
-.justify {
+
+.col-30 {
+  position: relative;
+  float: left;
+  box-sizing:border-box;
+  width: 33.33%;
+  min-height: 300px;
+  height: auto;
+  background: transparent;
+}
+
+.col-30:first-child {
+  padding: 0px 5px 0px 0px;
+}
+
+.col-30:last-child {
+  padding: 0px 0px 0px 5px;
+}
+
+.col-30 > span:first-child {
+  width: 80%;
+}
+
+.project-hint {
   text-align: justify;
+  display: inline-block;
+  width: 80%;
+}
+/*LIGHT*/
+.project-short-descp {
+  color: #666666;
+  width: 80%;
+  display: inline-block;
+  text-align: justify;
+
+}
+/*DARK*/
+.project-short-descp {
+  color: #BBBBBB;
+  width: 80%;
+  display: inline-block;
+  text-align: justify;
+
+}
+.learn-more {
+  vertical-align: middle;
+  font-family: RalewayMedium;
+}
+/*LIGHT*/
+.learn-more > span {
+  border-bottom: 1px solid #000000;
+}
+/*DARK*/
+
+.learn-more > span {
+  border-bottom: 1px solid #FFFFFF;
+}
+svg {
+  vertical-align: middle;
+  margin-left: 10px;
+}
+
+iframe {
+  display: block;
+  margin: 10px auto;
 }
 
 span.h6 {
@@ -660,78 +803,8 @@ span.h4 {
   background: #000000;
 }
 
-/*Page NAV Styles*/
-
-nav.page-navigation {
-  width: 3em;
-  height: 500px;
-  float: left;
-  display: table;
-  padding: 0px;
-  margin: 0px;
-}
-
-nav.page-navigation > ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: table-cell;
-  vertical-align: middle;
-}
-
-li.nav_item {
-  border: 0;
-  position: relative;
-  font-size: 16px;
-	cursor: pointer;
-  width: 100%;
-  height: 1.25em;
-  margin: 0.5em 0;
-}
-
-.nav_item::after {
-  content: '';
-	position: absolute;
-	top: 35%;
-	left: 0;
-	width: 80%;
-	height: 10%;
-	background: #000000;
-	transform-origin: 0 0;
-	transition: transform 0.5s, background-color 0.5s;
-	transition-timing-function: cubic-bezier(0.7,0,0.3,1);
-}
-
-
-.nav_item:not(.nav_item-current):hover::after,
-.nav_item:not(.nav_item-current):focus::after {
-	background: #FF8C00;
-	transition: background-color 0.3s;
-}
-
-.nav_item-current::after {
-	background: #212956;
-	transform: scale3d(0.2,1,1);
-}
-
-.nav_item-title {
-	margin: 0 0 0 1em;
-	opacity: 0;
-	display: block;
-	transform: translate3d(2em,0,0);
-	transition: opacity 0.5s, transform 0.5s;
-	transition-timing-function: cubic-bezier(0.7,0,0.3,1);
-}
-
-.nav_item-current .nav_item-title {
-	opacity: 1;
-	transform: translate3d(0,0,0);
-	transition-delay: 0.1s;
-}
-
-/*Page NAV Styles ENDS*/
-
 /* About section education and interests*/
+/*LIGHT*/
 .page-1 > .page-content >  .page-content-inner > .page-descp > p {
   font-size: 20px;
   color: #000000;
@@ -739,13 +812,20 @@ li.nav_item {
   width: 100%;
   text-align: left;
 }
-
-div.left{
+/*DARK*/
+.page-1 > .page-content >  .page-content-inner > .page-descp > p {
+  font-size: 20px;
+  color: #FFFFFF;
+  font-family: Theinhardt-Md;
+  width: 100%;
+  text-align: left;
+}
+.left{
   display: inline-block;
   width: 50%;
 }
 
-div.right {
+.right {
   display: inline-block;
   width: 50%;
 }
