@@ -27,7 +27,7 @@ class Publications extends React.Component {
           <div className='page-items-container' ref={(element) => this.publications = element}>
             <div className='row'>
               <div className='col-30'>
-                <span className='h4'>
+                <span className='h4 project-title'>
                   Robocodes: Towards Generative Street  Addresses from
                   Satellite Imagery.
                 </span>
@@ -47,7 +47,7 @@ class Publications extends React.Component {
                 </p>
               </div>
               <div className='col-30'>
-                <span className='h4'>Generative Street Addresses from Satellite Imagery.</span>
+                <span className='h4 project-title'>Generative Street Addresses from Satellite Imagery.</span>
                 <span className='project-hint' >
                   IJGI - March 8, 2018
                 </span>
@@ -63,7 +63,7 @@ class Publications extends React.Component {
                 </p>
               </div>
               <div className='col-30'>
-                <span className='h4'>
+                <span className='h4 project-title'>
                   A Holistic Framework for Addressing the World using
                   Machine Learning
                 </span>

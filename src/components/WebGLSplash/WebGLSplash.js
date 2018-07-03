@@ -21,7 +21,7 @@ class WebGLSplash extends React.Component {
         DENSITY_DISSIPATION: 0.98,
         VELOCITY_DISSIPATION: 0.99,
         PRESSURE_DISSIPATION: 0.8,
-        PRESSURE_ITERATIONS: 25,
+        PRESSURE_ITERATIONS: 40,
         CURL: 30,
         SPLAT_RADIUS: 0.005
     }

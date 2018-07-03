@@ -68,6 +68,10 @@ src: url('/assets/fonts/Theinhardt-Md.woff2');
   font-family: SpaceMono-Bold;
   src: url('/assets/fonts/SpaceMono-Bold.ttf');
 }
+
+@import url('https://fonts.googleapis.com/css?family=Muli');
+
+
 .content-wrapper {
   width: 100%;
   height: 100%;
@@ -577,7 +581,7 @@ ul.menu-main > li:nth-child(4):hover ul.sub-menu {
   visibility: visible;
 }
 
-
+/*LIGHT*/
 .page-title > p {
   float: right;
   position: relative;
@@ -603,6 +607,32 @@ ul.menu-main > li:nth-child(4):hover ul.sub-menu {
   transition-timing-function: cubic-bezier(0.7, 0, 0.3, 1);
 }
 
+/*DARK*/
+.page-title > p {
+  float: right;
+  position: relative;
+  font-size: 132px;
+  font-family: TrumpGothicWest-Bold;
+
+  color: #FFFFFF;
+  text-align: right;
+  width: auto;
+  margin: 0px;
+
+  padding: 0px;
+
+
+  -webkit-transition: transform 300ms linear;
+  -moz-transition: transform 300ms linear;
+  -o-transition: transform 300ms linear;
+  transition: transform 300ms linear;
+
+  -webkit-transition-timing-function: cubic-bezier(0.7, 0, 0.3, 1);
+  -moz-transition-timing-function: cubic-bezier(0.7, 0, 0.3, 1);
+  -o-transition-timing-function: cubic-bezier(0.7, 0, 0.3, 1);
+  transition-timing-function: cubic-bezier(0.7, 0, 0.3, 1);
+}
+/*LIGHT*/
 .page-title > p::before {
   content: '';
   position: absolute;
@@ -612,6 +642,17 @@ ul.menu-main > li:nth-child(4):hover ul.sub-menu {
   width: 100%;
 }
 
+/*DARK*/
+
+.page-title > p::before {
+  content: '';
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  border-bottom: 5px solid #FFFFFF;
+  width: 100%;
+}
+/*LIGHT*/
 .page-title > p::after {
   content: '';
   position: absolute;
@@ -631,16 +672,41 @@ ul.menu-main > li:nth-child(4):hover ul.sub-menu {
   -o-transition-timing-function: cubic-bezier(0.7, 0, 0.3, 1);
   transition-timing-function: cubic-bezier(0.7, 0, 0.3, 1);
 }
+/*DARK*/
+.page-title > p::after {
+  content: '';
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  border-bottom: 5px solid #FF00FF;
+  padding-bottom: 0px;
+  width: 0px;
+
+  -webkit-transition: transform 300ms linear,  width 300ms linear;
+  -moz-transition: transform 300ms linear,  width 300ms linear;
+  -o-transition: transform 300ms linear,  width 300ms linear;
+  transition: transform 300ms linear,  width 300ms linear;
+
+  -webkit-transition-timing-function: cubic-bezier(0.7, 0, 0.3, 1);
+  -moz-transition-timing-function: cubic-bezier(0.7, 0, 0.3, 1);
+  -o-transition-timing-function: cubic-bezier(0.7, 0, 0.3, 1);
+  transition-timing-function: cubic-bezier(0.7, 0, 0.3, 1);
+}
 
 .page-title:hover p::after {
   transform: translateX(0%);
   width: 100%;
 }
-
+/*LIGHT*/
 .page-title:hover p {
   color: #000000;
 }
 
+/*DARK*/
+
+.page-title:hover p {
+  color: #FFFFFF;
+}
 .page-seperator {
   height: 1px; width: 100%;
   background: #FFFFFF;
@@ -721,6 +787,15 @@ ul.menu-main > li:nth-child(4):hover ul.sub-menu {
 .col-30 > span:first-child {
   width: 80%;
 }
+.project-title {
+  font-family: 'Muli', sans-serif;
+  margin-bottom: 20px;
+}
+
+.project-hint {
+  margin-bottom: 10px;
+}
+
 
 .project-hint {
   text-align: justify;
@@ -767,27 +842,17 @@ iframe {
 }
 
 span.h6 {
-  margin-bottom: 4px;
   display: block;
-  padding: 0px;
-  font-family: SpaceMono-Regular;
   font-size: 14px;
 }
 
 span.h1 {
   display: block;
-  font-family: TrumpGothicWest-Bold;
   font-size: 78px;
-  padding: 0px;
-  margin-bottom: 20px;
 }
 
 span.h4 {
-  margin-bottom: 4px;
-  font-family: SpaceMono-Bold;
   font-size: 24px;
-  margin-top: 0px;
-  padding: 0px;
   display: block;
 }
 

@@ -26,7 +26,7 @@ class Projects extends React.Component {
             <div className='page-items-container' ref={(element) => this.projects = element}>
               <div className='row'>
                 <div className='col-30'>
-                  <span className='h4'>COBRIX</span>
+                  <span className='h4 project-title'>COBRIX</span>
                   <span className='project-hint' >
                     Computer Programming for the blind and visually impaired.
                   </span>
@@ -49,7 +49,7 @@ class Projects extends React.Component {
                   </p>
                 </div>
                 <div className='col-30'>
-                  <span className='h4'>DISGUISED FACE IDENTIFICATION</span>
+                  <span className='h4 project-title'>DISGUISED FACE IDENTIFICATION</span>
                   <span className='project-hint' >
                     Security System enhanced by Computer Vision and Machine Learning.
                   </span>
@@ -71,7 +71,7 @@ class Projects extends React.Component {
                   </p>
                 </div>
                 <div className='col-30'>
-                  <span className='h4'>MEDICAL REPORT DIGITIZER</span>
+                  <span className='h4 project-title'>MEDICAL REPORT DIGITIZER</span>
                   <span className='project-hint' >
                     Android Application based on OpenCV and Tesserract OCR.
                   </span>
@@ -97,7 +97,7 @@ class Projects extends React.Component {
               </div>
               <div className='row'>
                 <div className='col-30'>
-                  <span className='h4'>APTITUDE TEST CMS</span>
+                  <span className='h4 project-title'>APTITUDE TEST CMS</span>
                   <span className='project-hint' >
                     CMS specially designed for teachers and professors to
                     undertake quick weekly surprise tests for their students.
@@ -124,7 +124,7 @@ class Projects extends React.Component {
                   </p>
                 </div>
                 <div className='col-30'>
-                  <span className='h4'>STANDALONE MULTIMEDIA STREAMER</span>
+                  <span className='h4 project-title'>STANDALONE MULTIMEDIA STREAMER</span>
                   <span className='project-hint' >
                     A Raspberry Pi based multimedia streaming device.
                   </span>
@@ -147,7 +147,7 @@ class Projects extends React.Component {
                   </p>
                 </div>
                 <div className='col-30'>
-                  <span className='h4'>SMART TITLE</span>
+                  <span className='h4 project-title'>SMART TITLE</span>
                   <span className='project-hint' >
                     Implemented using the paper - https://arxiv.org/abs/1512.01712 in
                     chainer.

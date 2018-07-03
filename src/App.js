@@ -160,7 +160,7 @@ class App extends Component {
               </ul>
             </div>
             <div className='notices'>
-              <p>Built with <img src='react.png' /></p>
+              <p>Proudly, built with <img src='assets/react.png' /></p>
             </div>
           </div>
 
