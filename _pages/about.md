@@ -8,7 +8,7 @@ redirect_from:
   - /about.html
 ---
 
-I am a pursuing my graduate studies in Data Science and Machine Learning at the University of Colorado Boulder.
+I am pursuing my graduate studies in Data Science and Machine Learning at the University of Colorado Boulder.
 
 Prior to my graduate studies, I was at Facebook Research as a Software Engineer in Machine Learning from September 2016 - December 2017.
 
