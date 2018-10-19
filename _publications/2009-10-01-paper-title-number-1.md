@@ -1,15 +1,12 @@
 ---
-title: "Paper Title Number 1"
+title: "A Holistic Framework for Addressing the World using Machine Learning."
 collection: publications
-permalink: /publication/2009-10-01-paper-title-number-1
+permalink: /publication/holistic-framework-addressing-world-ml
 excerpt: 'This paper is about the number 1. The number 2 is left for future work.'
 date: 2009-10-01
-venue: 'Journal 1'
-paperurl: 'http://academicpages.github.io/files/paper1.pdf'
-citation: 'Your Name, You. (2009). &quot;Paper Title Number 1.&quot; <i>Journal 1</i>. 1(1).'
+venue: 'CVPR, IEEE, 2018'
+paperurl: 'https://research.fb.com/wp-content/uploads/2018/06/A-Holistic-Framework-for-Addressing-the-World-using-Machine-Learning.pdf'
+citation: ' Ilke Demir, Forest Hughes, Aman Raj, __Kaunil Dhruv__, Suryanarayana Murthy Muddla, Sanyam Garg, Barrett Doo, Ramesh Raskar. A holistic Framework for Addressing the World using Machine Learning. In _CVPR_, IEEE, 2018.'
 ---
-This paper is about the number 1. The number 2 is left for future work.
-
-[Download paper here](http://academicpages.github.io/files/paper1.pdf)
-
-Recommended citation: Your Name, You. (2009). "Paper Title Number 1." <i>Journal 1</i>. 1(1).
+Millions of people are disconnected from basic services due to lack of adequate addressing. Through this paper we proposed an automatic generative algorithm to create street addresses from satellite imagery. Our addressing scheme is coherent with the street topology, linear and hierarchical to follow human perception, and universal to be used as a uniﬁed geocoding system.
+[Download paper here](https://research.fb.com/wp-content/uploads/2018/06/A-Holistic-Framework-for-Addressing-the-World-using-Machine-Learning.pdf)
