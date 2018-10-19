@@ -1,7 +1,7 @@
 ---
 layout: archive
 title: "CV"
-permalink: /cv/
+permalink: /cv
 author_profile: true
 redirect_from:
   - /resume
@@ -11,49 +11,36 @@ redirect_from:
 
 Education
 ======
-* B.S. in GitHub, GitHub University, 2012
-* M.S. in Jekyll, GitHub University, 2014
-* Ph.D in Version Control Theory, GitHub University, 2018 (expected)
+* M.S. in CS, University of Colorado Boulder, 2020 (expected)
+* B.E. in CS, University of Mumbai, 2013 - 2017. __GPA: 3.0__
 
 Work experience
 ======
-* Summer 2015: Research Assistant
-  * Github University
-  * Duties included: Tagging issues
-  * Supervisor: Professor Git
+* __Computer Vision Engineer - Insylo Tech SLU (contract):__ _March 2018 - June 2018_
+  * Developed Computer Vision Pipelines for Volumetric Estimation of Silos using 2D and 3D images.
+  * CV Techniques such as Depth from Focus and depth from Laser Mesh Projection were implemented.
+  * Researched the performance of GANs for generation of depth maps using 2D (monocular) images.  
+  * Assessing the feasibility of depth sensing cameras (Astra Pro, Intel Realsense) in a production setting using Android device and Raspberry Pi.
 
-* Fall 2015: Research Assistant
-  * Github University
-  * Duties included: Merging pull requests
-  * Supervisor: Professor Hub
-  
-Skills
-======
-* Skill 1
-* Skill 2
-  * Sub-skill 2.1
-  * Sub-skill 2.2
-  * Sub-skill 2.3
-* Skill 3
+* __Software Engineer in Machine Learning: Facebook:__ _September 2016 - December 2017_
+  * Worked with Connectivity Labs and mentored by Prof. Ramesh Raskar.
+  * Researched and implemented a pipeline for Visualization of Learned Features of a CNN based on SGD to improve model training for SegNet, VGGBn and UResNet architectures.
+  * Created Data Annotation tools using Qt5 used by a team (5) of GIS Analysts.
+  * Optimized rendering of 2D vector geometries on an Android App. This optimization made it possible for the Android Application to be used by low end phones and reduce costs by a factor of 10.
+  * All the codes are open sourced to [facebookresearch/street-address](https://github.com/facebookresearch/street-addresses)
+
+* __Software Engineer Intern: ISENSES INC.__ _January 2016 - January 2017_
+  * Developed a Machine Learning pipeline for Disguised Face Detection.
+  * Implemented a SegNet based feature detector to identify facial action units which were then used to classify disguised faces using an SVM Classifier.
+  * Entire pipeline was optimized and implemented on a an FPGA and materialized into a product.
 
 Publications
 ======
   <ul>{% for post in site.publications %}
     {% include archive-single-cv.html %}
   {% endfor %}</ul>
-  
-Talks
+
+Awards
 ======
-  <ul>{% for post in site.talks %}
-    {% include archive-single-talk-cv.html %}
-  {% endfor %}</ul>
-  
-Teaching
-======
-  <ul>{% for post in site.teaching %}
-    {% include archive-single-cv.html %}
-  {% endfor %}</ul>
-  
-Service and leadership
-======
-* Currently signed in to 43 different slack teams
+* __Best Paper Award__ for the research paper _“Robocodes: Towards Generative Street Addresses from Satellite Imagery”_ in __CVPR 2017 workshop on Earthvision.__
+* __MS Imagine Cup 2017 Korea Semi-Finalist__ for our project: _COBRIX_  
