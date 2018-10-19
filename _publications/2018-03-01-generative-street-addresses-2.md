@@ -4,7 +4,7 @@ collection: publications
 permalink: /publication/generative-street-addresses-satellite-iimagery
 excerpt: 'This paper describes our automatic generative algorithm to create street addresses from satellite images by learning and labeling roads, regions, and address cells.'
 date: March 08, 2018
-venue: 'ISPRS 2018'
+venue: 'ISPRS'
 paperurl:
 citation: 'Ilke Demir, Forest Hughes, Aman Raj, <b>Kaunil Dhruv</b>, Suryanarayana Murthy Muddla, Sanyam Garg, Barrett Doo, Ramesh Raskar. "Generative Street Addresses from Satellite Imagery". <i>ISPRS 2018</i>.'
 ---
