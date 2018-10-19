@@ -1,7 +1,8 @@
 ---
-title: "Portfolio item number 1"
-excerpt: "Short description of portfolio item number 1<br/><img src='/images/500x300.png'>"
+title: "Expertify"
+excerpt: "https://www.expertify.co <br> <img src='/images/expertify.png' />"
 collection: portfolio
 ---
 
-This is an item in your portfolio. It can be have images or nice text. If you name the file .md, it will be parsed as markdown. If you name the file .html, it will be parsed as HTML. 
+* A messaging platform for aspiring leaders and enthusiasts to connect with experts in their domain.
+* Since the launch, (27th June 2018) Expertify has been consistently able to maintain 456 monthly active users.
