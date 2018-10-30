@@ -16,3 +16,5 @@ My research interests include:
 1. Machine Learning   
 2. Computer Vision  
 3. Data Science  
+
+[[Resume](https://kaunild.github.io/files/resume.pdf)]

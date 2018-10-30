@@ -9,6 +9,8 @@ redirect_from:
 
 {% include base_path %}
 
+[Resume](https://kaunild.github.io/files/resume.pdf)
+
 Education
 ======
 * M.S. in CS, University of Colorado Boulder, 2020 (expected)
