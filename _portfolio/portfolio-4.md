@@ -1,10 +1,8 @@
 ---
-title: "Medical Reports Digitizer"
-excerpt: "Analyze user's health using Digitized Medical Reports <br><br> <img src='/images/5_pixel.png' />"
+title: "Expertify"
+excerpt: "https://www.expertify.co <br><br> <img src='/images/expertify.png' />"
 collection: portfolio
 ---
 
-* Developed and implemented a Computer Vision pipeline to segment medical reports by identifying the document structure.
-* Resulting document segments were then used to extract medical information using OCR.
-* Entire pipeline is implemented on an Android Application using OpenCV and Tesserract OCR Libraries.
-* Results obtained from OCR of user's reports were then fed into a LSTM based RNN Network to predict user's health and advice any changes to benefit their health.
+* A messaging platform for aspiring leaders and enthusiasts to connect with experts in their domain.
+* Since the launch, (27th June 2018) Expertify has been consistently able to maintain 456 monthly active users.
