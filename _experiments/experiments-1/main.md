@@ -1,12 +1,7 @@
----
-title: "FER2013 Challenge"
-excerpt: "Comparing different feature selection and classification techniques on facial expression data."
-collection: portfolio
----
 
 ## CNN + SVM
 
-* Here we try to examine the performance of a CNN classifier against using CNN as a feature extractor and using SVM as the final classifier.
+* Here we try to examine the performance of a CNN classifier against using CNN as a feature extractor and using SVM as the final classifier. 
 
 
 ```python
@@ -60,7 +55,7 @@ file_reader.read()
 data = Data(file_reader._data)
 ```
 
-#### Preprocess the data
+#### Preprocess the data 
 
 
 ```python
@@ -217,7 +212,7 @@ class FER2013Dataset(Dataset):
         self.transform = transform
         self._X = X
         self._Y = Y
-
+        
     def __len__(self):
         return len(self._X)
 
@@ -225,7 +220,7 @@ class FER2013Dataset(Dataset):
         return {'inputs': self._X[idx], 'labels': self._Y[idx]}
 ```
 
-#### Network hyperparameters
+#### Network hyperparameters 
 
 
 ```python
@@ -271,21 +266,21 @@ def train(model, dataset_loader, epoch, device, optimizer, criterion):
         inputs = inputs.float()
         inputs, labels = inputs.to(device), labels.to(device)
         optimizer.zero_grad()
-
+        
         outputs = model(inputs)
         loss = criterion(outputs, labels)
-
+        
         loss.backward()
-
+        
         optimizer.step()
-
+        
         running_loss += loss.item()
-
+        
         print('Train: [Epoch: {}/{}, Batch: {} ({:.0f}%), running_loss: {:.3f}]'
               .format(
                   epoch,
                   NUM_EPOCHS,
-                  i + 1,
+                  i + 1, 
                   i*100/len(train_loader),
                   running_loss
               ), end='\r')
@@ -297,20 +292,20 @@ def test(model, dataset_loader, device, criterion):
     correct = 0
     total = 0
     valid_loss = 0
-
+    
     with torch.no_grad():
         for data in dataset_loader:
-
+            
             images, labels = data['inputs'], data['labels']
             images = images.float()
             images, labels = images.to(device), labels.to(device)
-
+            
             outputs = model(images)
             valid_loss += criterion(outputs, labels).item()
-
+            
             pred = outputs.max(1, keepdim=True)[1]
             correct += pred.eq(labels.view_as(pred)).sum().item()
-
+    
     accuracy = 100 * correct / len(test_loader.dataset)
     print('Validation: [running loss: {:.3f}, accuracy: {:.3f}]'.format(
             valid_loss, accuracy
@@ -320,7 +315,7 @@ def test(model, dataset_loader, device, criterion):
     return valid_loss, accuracy
 
 def load_model(epoch):
-
+    
     model = CNN()
     model.load_state_dict(torch.load('{}-{}.{}'.format(MODEL_PATH_PREFIX,str(epoch), MODEL_PATH_EXT)))
     return model
@@ -347,19 +342,19 @@ epoch = 1
 while epoch <= NUM_EPOCHS:
     running_loss = train(cnn, train_loader, epoch, device, optimizer, criterion)
     valid_loss, accuracy = test(cnn, test_loader, device, criterion)
-
+    
     # record all the models that we have had so far.
     loss_es.append((running_loss, valid_loss, accuracy))
     # write model to disk.
     torch.save(cnn.state_dict(), 'model-cnn-epoch-{}.pth'.format(epoch))
-
+    
     # reset if:
     #   1. the accuracy is less than the best accuracy so far
     #   2. the accuracy is equal to the best accuracy so far.
-
+    
     if accuracy < best_accuracy or int(accuracy) == int(best_accuracy):
         count_acc += 1
-
+    
     if count_acc == 5:
         if LR/2 < MIN_LR:
             # END TRAINING.
@@ -374,27 +369,27 @@ while epoch <= NUM_EPOCHS:
         cnn.to(device)
         count_acc = 0
         epoch = best_model
-
+    
     if accuracy > best_accuracy:
         best_accuracy = accuracy
         best_model = epoch
         print('Best Accuracy: {}'.format(best_accuracy))
-
+    
     epoch+=1
-
+    
 print('Trainig complete')
 ```
 
     Train: [Epoch: 1/100, Batch: 225 (100%), running_loss: 410.068]
     Validation: [running loss: 224.207, accuracy: 25.155]
-
+    
     Best Accuracy: 25.155086848635236
     Train: [Epoch: 2/100, Batch: 225 (100%), running_loss: 393.918]
     Validation: [running loss: 220.234, accuracy: 25.633]
-
+    
     Best Accuracy: 25.632754342431763
     Train: [Epoch: 3/100, Batch: 225 (100%), running_loss: 382.042]
     Validation: [running loss: 213.175, accuracy: 33.579]
-
+    
     Best Accuracy: 33.57940446650124
     Train: [Epoch: 4/100, Batch: 118 (52%), running_loss: 195.688]
