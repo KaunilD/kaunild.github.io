@@ -326,6 +326,26 @@
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </code></pre></div></div>
 
+<p><img src="output_8_0.png" alt="png" /></p>
+
+<p><img src="output_8_1.png" alt="png" /></p>
+
+<p><img src="output_8_2.png" alt="png" /></p>
+
+<p><img src="output_8_3.png" alt="png" /></p>
+
+<p><img src="output_8_4.png" alt="png" /></p>
+
+<p><img src="output_8_5.png" alt="png" /></p>
+
+<p><img src="output_8_6.png" alt="png" /></p>
+
+<p><img src="output_8_7.png" alt="png" /></p>
+
+<p><img src="output_8_8.png" alt="png" /></p>
+
+<p><img src="output_8_9.png" alt="png" /></p>
+
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">split_ratio</span> <span class="o">=</span> <span class="mf">0.8</span>
 
 <span class="n">train_indices</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">_x</span><span class="p">),</span> <span class="nb">int</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">_x</span><span class="p">)</span><span class="o">*</span><span class="n">split_ratio</span><span class="p">))</span>
@@ -380,7 +400,7 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">dropout</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">Dropout</span><span class="p">(</span><span class="n">p</span><span class="o">=</span><span class="mf">0.2</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">fc2</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">Linear</span><span class="p">(</span><span class="mi">1024</span><span class="p">,</span> <span class="mi">1024</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">fc3</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">Linear</span><span class="p">(</span><span class="mi">1024</span><span class="p">,</span> <span class="mi">7</span><span class="p">)</span>
-
+        <span class="bp">self</span><span class="o">.</span><span class="n">log_softmax</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">LogSoftmax</span><span class="p">(</span><span class="n">dim</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
     <span class="k">def</span> <span class="nf">forward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">):</span>
 
         <span class="n">x</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">layer1</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
@@ -400,6 +420,7 @@
         <span class="n">x</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">dropout</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
 
         <span class="n">y</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">fc3</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+        <span class="n">y</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">log_softmax</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">y</span>
 </code></pre></div></div>
 
@@ -429,8 +450,12 @@
 
 <h4 id="network-hyperparameters">Network hyperparameters</h4>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">NUM_EPOCHS</span> <span class="o">=</span> <span class="mi">2</span>
-<span class="n">BATCH_SIZE</span> <span class="o">=</span> <span class="mi">4</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">NUM_EPOCHS</span> <span class="o">=</span> <span class="mi">100</span>
+<span class="n">BATCH_SIZE</span> <span class="o">=</span> <span class="mi">128</span>
+<span class="n">LR</span> <span class="o">=</span> <span class="mf">0.1</span>
+<span class="n">MIN_LR</span> <span class="o">=</span> <span class="mf">0.00001</span>
+<span class="n">MODEL_PATH_PREFIX</span> <span class="o">=</span> <span class="s">'model-cnn-epoch'</span>
+<span class="n">MODEL_PATH_EXT</span> <span class="o">=</span> <span class="s">'pth'</span>
 <span class="n">device</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">device</span><span class="p">(</span><span class="s">"cuda"</span> <span class="k">if</span> <span class="n">torch</span><span class="o">.</span><span class="n">cuda</span><span class="o">.</span><span class="n">is_available</span><span class="p">()</span> <span class="k">else</span> <span class="s">"cpu"</span><span class="p">)</span>
 </code></pre></div></div>
 
@@ -448,20 +473,21 @@
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">cnn</span> <span class="o">=</span> <span class="n">CNN</span><span class="p">()</span>
 <span class="n">cnn</span> <span class="o">=</span> <span class="n">cnn</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">device</span><span class="p">)</span>
 <span class="n">criterion</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">CrossEntropyLoss</span><span class="p">()</span>
-<span class="n">optimizer</span> <span class="o">=</span> <span class="n">optim</span><span class="o">.</span><span class="n">SGD</span><span class="p">(</span><span class="n">cnn</span><span class="o">.</span><span class="n">parameters</span><span class="p">(),</span> <span class="n">lr</span><span class="o">=</span><span class="mf">0.001</span><span class="p">,</span> <span class="n">momentum</span><span class="o">=</span><span class="mf">0.9</span><span class="p">)</span>
+<span class="n">optimizer</span> <span class="o">=</span> <span class="n">optim</span><span class="o">.</span><span class="n">Adadelta</span><span class="p">(</span><span class="n">cnn</span><span class="o">.</span><span class="n">parameters</span><span class="p">(),</span> <span class="n">lr</span><span class="o">=</span><span class="n">LR</span><span class="p">,</span> <span class="n">rho</span><span class="o">=</span><span class="mf">0.95</span><span class="p">,</span> <span class="n">eps</span><span class="o">=</span><span class="mf">1e-08</span><span class="p">)</span>
 </code></pre></div></div>
 
 <h4 id="train-the-network">Train the network</h4>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">for</span> <span class="n">epoch</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">NUM_EPOCHS</span><span class="p">):</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">train</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">dataset_loader</span><span class="p">,</span> <span class="n">epoch</span><span class="p">,</span> <span class="n">device</span><span class="p">,</span> <span class="n">optimizer</span><span class="p">,</span> <span class="n">criterion</span><span class="p">):</span>
+    <span class="n">model</span><span class="o">.</span><span class="n">train</span><span class="p">()</span>
     <span class="n">running_loss</span> <span class="o">=</span> <span class="mf">0.0</span>
-    <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">data</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">train_loader</span><span class="p">,</span> <span class="mi">0</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="p">,</span> <span class="n">data</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">dataset_loader</span><span class="p">,</span> <span class="mi">0</span><span class="p">):</span>
         <span class="n">inputs</span><span class="p">,</span> <span class="n">labels</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s">'inputs'</span><span class="p">],</span> <span class="n">data</span><span class="p">[</span><span class="s">'labels'</span><span class="p">]</span>
         <span class="n">inputs</span> <span class="o">=</span> <span class="n">inputs</span><span class="o">.</span><span class="nb">float</span><span class="p">()</span>
         <span class="n">inputs</span><span class="p">,</span> <span class="n">labels</span> <span class="o">=</span> <span class="n">inputs</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">device</span><span class="p">),</span> <span class="n">labels</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">device</span><span class="p">)</span>
         <span class="n">optimizer</span><span class="o">.</span><span class="n">zero_grad</span><span class="p">()</span>
 
-        <span class="n">outputs</span> <span class="o">=</span> <span class="n">cnn</span><span class="p">(</span><span class="n">inputs</span><span class="p">)</span>
+        <span class="n">outputs</span> <span class="o">=</span> <span class="n">model</span><span class="p">(</span><span class="n">inputs</span><span class="p">)</span>
         <span class="n">loss</span> <span class="o">=</span> <span class="n">criterion</span><span class="p">(</span><span class="n">outputs</span><span class="p">,</span> <span class="n">labels</span><span class="p">)</span>
 
         <span class="n">loss</span><span class="o">.</span><span class="n">backward</span><span class="p">()</span>
@@ -470,10 +496,119 @@
 
         <span class="n">running_loss</span> <span class="o">+=</span> <span class="n">loss</span><span class="o">.</span><span class="n">item</span><span class="p">()</span>
 
-        <span class="k">if</span> <span class="n">i</span><span class="o">%</span><span class="mi">1000</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
-            <span class="k">print</span><span class="p">(</span><span class="s">'[</span><span class="si">%</span><span class="s">d, </span><span class="si">%5</span><span class="s">d] loss: </span><span class="si">%.3</span><span class="s">f'</span> <span class="o">%</span>
-                  <span class="p">(</span><span class="n">epoch</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">running_loss</span> <span class="o">/</span> <span class="mi">1000</span><span class="p">))</span>
+        <span class="k">print</span><span class="p">(</span><span class="s">'Train: [Epoch: {}/{}, Batch: {} ({:.0f}</span><span class="si">%</span><span class="s">), running_loss: {:.3f}]'</span>
+              <span class="o">.</span><span class="n">format</span><span class="p">(</span>
+                  <span class="n">epoch</span><span class="p">,</span>
+                  <span class="n">NUM_EPOCHS</span><span class="p">,</span>
+                  <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span>
+                  <span class="n">i</span><span class="o">*</span><span class="mi">100</span><span class="o">/</span><span class="nb">len</span><span class="p">(</span><span class="n">train_loader</span><span class="p">),</span>
+                  <span class="n">running_loss</span>
+              <span class="p">),</span> <span class="n">end</span><span class="o">=</span><span class="s">'</span><span class="se">\r</span><span class="s">'</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">()</span>
+    <span class="k">return</span> <span class="n">running_loss</span>
+
+<span class="k">def</span> <span class="nf">test</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">dataset_loader</span><span class="p">,</span> <span class="n">device</span><span class="p">,</span> <span class="n">criterion</span><span class="p">):</span>
+    <span class="n">model</span><span class="o">.</span><span class="nb">eval</span><span class="p">()</span>
+    <span class="n">correct</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">total</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">valid_loss</span> <span class="o">=</span> <span class="mi">0</span>
+
+    <span class="k">with</span> <span class="n">torch</span><span class="o">.</span><span class="n">no_grad</span><span class="p">():</span>
+        <span class="k">for</span> <span class="n">data</span> <span class="ow">in</span> <span class="n">dataset_loader</span><span class="p">:</span>
+
+            <span class="n">images</span><span class="p">,</span> <span class="n">labels</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s">'inputs'</span><span class="p">],</span> <span class="n">data</span><span class="p">[</span><span class="s">'labels'</span><span class="p">]</span>
+            <span class="n">images</span> <span class="o">=</span> <span class="n">images</span><span class="o">.</span><span class="nb">float</span><span class="p">()</span>
+            <span class="n">images</span><span class="p">,</span> <span class="n">labels</span> <span class="o">=</span> <span class="n">images</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">device</span><span class="p">),</span> <span class="n">labels</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">device</span><span class="p">)</span>
+
+            <span class="n">outputs</span> <span class="o">=</span> <span class="n">model</span><span class="p">(</span><span class="n">images</span><span class="p">)</span>
+            <span class="n">valid_loss</span> <span class="o">+=</span> <span class="n">criterion</span><span class="p">(</span><span class="n">outputs</span><span class="p">,</span> <span class="n">labels</span><span class="p">)</span><span class="o">.</span><span class="n">item</span><span class="p">()</span>
+
+            <span class="n">pred</span> <span class="o">=</span> <span class="n">outputs</span><span class="o">.</span><span class="nb">max</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">keepdim</span><span class="o">=</span><span class="bp">True</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span>
+            <span class="n">correct</span> <span class="o">+=</span> <span class="n">pred</span><span class="o">.</span><span class="n">eq</span><span class="p">(</span><span class="n">labels</span><span class="o">.</span><span class="n">view_as</span><span class="p">(</span><span class="n">pred</span><span class="p">))</span><span class="o">.</span><span class="nb">sum</span><span class="p">()</span><span class="o">.</span><span class="n">item</span><span class="p">()</span>
+
+    <span class="n">accuracy</span> <span class="o">=</span> <span class="mi">100</span> <span class="o">*</span> <span class="n">correct</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">test_loader</span><span class="o">.</span><span class="n">dataset</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">'Validation: [running loss: {:.3f}, accuracy: {:.3f}]'</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+            <span class="n">valid_loss</span><span class="p">,</span> <span class="n">accuracy</span>
+        <span class="p">)</span>
+    <span class="p">)</span>
+    <span class="k">print</span><span class="p">()</span>
+    <span class="k">return</span> <span class="n">valid_loss</span><span class="p">,</span> <span class="n">accuracy</span>
+
+<span class="k">def</span> <span class="nf">load_model</span><span class="p">(</span><span class="n">epoch</span><span class="p">):</span>
+
+    <span class="n">model</span> <span class="o">=</span> <span class="n">CNN</span><span class="p">()</span>
+    <span class="n">model</span><span class="o">.</span><span class="n">load_state_dict</span><span class="p">(</span><span class="n">torch</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s">'{}-{}.{}'</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">MODEL_PATH_PREFIX</span><span class="p">,</span><span class="nb">str</span><span class="p">(</span><span class="n">epoch</span><span class="p">),</span> <span class="n">MODEL_PATH_EXT</span><span class="p">)))</span>
+    <span class="k">return</span> <span class="n">model</span>
+
+<span class="k">def</span> <span class="nf">restart_training</span><span class="p">(</span><span class="n">best_model</span><span class="p">,</span> <span class="n">learning_rate</span><span class="p">,</span> <span class="n">optimizer</span><span class="p">):</span>
+    <span class="n">model</span> <span class="o">=</span> <span class="n">load_model</span><span class="p">(</span><span class="n">epoch</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">param_group</span> <span class="ow">in</span> <span class="n">optimizer</span><span class="o">.</span><span class="n">param_groups</span><span class="p">:</span>
+        <span class="n">param_group</span><span class="p">[</span><span class="s">'lr'</span><span class="p">]</span> <span class="o">=</span> <span class="n">learning_rate</span>
+    <span class="k">return</span> <span class="n">model</span><span class="p">,</span> <span class="n">optimizer</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">loss_es</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">best_accuracy</span> <span class="o">=</span> <span class="mf">0.0</span>
+<span class="n">last_acc</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">best_model</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">count_acc</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">epoch</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="k">while</span> <span class="n">epoch</span> <span class="o">&lt;=</span> <span class="n">NUM_EPOCHS</span><span class="p">:</span>
+    <span class="n">running_loss</span> <span class="o">=</span> <span class="n">train</span><span class="p">(</span><span class="n">cnn</span><span class="p">,</span> <span class="n">train_loader</span><span class="p">,</span> <span class="n">epoch</span><span class="p">,</span> <span class="n">device</span><span class="p">,</span> <span class="n">optimizer</span><span class="p">,</span> <span class="n">criterion</span><span class="p">)</span>
+    <span class="n">valid_loss</span><span class="p">,</span> <span class="n">accuracy</span> <span class="o">=</span> <span class="n">test</span><span class="p">(</span><span class="n">cnn</span><span class="p">,</span> <span class="n">test_loader</span><span class="p">,</span> <span class="n">device</span><span class="p">,</span> <span class="n">criterion</span><span class="p">)</span>
+
+    <span class="c"># record all the models that we have had so far.</span>
+    <span class="n">loss_es</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">running_loss</span><span class="p">,</span> <span class="n">valid_loss</span><span class="p">,</span> <span class="n">accuracy</span><span class="p">))</span>
+    <span class="c"># write model to disk.</span>
+    <span class="n">torch</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="n">cnn</span><span class="o">.</span><span class="n">state_dict</span><span class="p">(),</span> <span class="s">'model-cnn-epoch-{}.pth'</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">epoch</span><span class="p">))</span>
+
+    <span class="c"># reset if:</span>
+    <span class="c">#   1. the accuracy is less than the best accuracy so far</span>
+    <span class="c">#   2. the accuracy is equal to the best accuracy so far.</span>
+
+    <span class="k">if</span> <span class="n">accuracy</span> <span class="o">&lt;</span> <span class="n">best_accuracy</span> <span class="ow">or</span> <span class="nb">int</span><span class="p">(</span><span class="n">accuracy</span><span class="p">)</span> <span class="o">==</span> <span class="nb">int</span><span class="p">(</span><span class="n">best_accuracy</span><span class="p">):</span>
+        <span class="n">count_acc</span> <span class="o">+=</span> <span class="mi">1</span>
+
+    <span class="k">if</span> <span class="n">count_acc</span> <span class="o">==</span> <span class="mi">5</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">LR</span><span class="o">/</span><span class="mi">2</span> <span class="o">&lt;</span> <span class="n">MIN_LR</span><span class="p">:</span>
+            <span class="c"># END TRAINING.</span>
+            <span class="k">break</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">LR</span><span class="o">/=</span><span class="mi">2</span>
+        <span class="k">print</span><span class="p">(</span>
+            <span class="s">'Plateau identified: Restarting with the best model: {} and resuced learning rate: {}.'</span>
+            <span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">best_model</span><span class="p">,</span> <span class="n">LR</span><span class="p">)</span>
+        <span class="p">)</span>
+        <span class="n">cnn</span><span class="p">,</span> <span class="n">optimizer</span> <span class="o">=</span> <span class="n">restart_training</span><span class="p">(</span><span class="n">best_model</span><span class="p">,</span> <span class="n">LR</span><span class="p">,</span> <span class="n">optimizer</span><span class="p">)</span>
+        <span class="n">cnn</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">device</span><span class="p">)</span>
+        <span class="n">count_acc</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="n">epoch</span> <span class="o">=</span> <span class="n">best_model</span>
+
+    <span class="k">if</span> <span class="n">accuracy</span> <span class="o">&gt;</span> <span class="n">best_accuracy</span><span class="p">:</span>
+        <span class="n">best_accuracy</span> <span class="o">=</span> <span class="n">accuracy</span>
+        <span class="n">best_model</span> <span class="o">=</span> <span class="n">epoch</span>
+        <span class="k">print</span><span class="p">(</span><span class="s">'Best Accuracy: {}'</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">best_accuracy</span><span class="p">))</span>
+
+    <span class="n">epoch</span><span class="o">+=</span><span class="mi">1</span>
+
 <span class="k">print</span><span class="p">(</span><span class="s">'Trainig complete'</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Train: [Epoch: 1/100, Batch: 225 (100%), running_loss: 410.068]
+Validation: [running loss: 224.207, accuracy: 25.155]
+
+Best Accuracy: 25.155086848635236
+Train: [Epoch: 2/100, Batch: 225 (100%), running_loss: 393.918]
+Validation: [running loss: 220.234, accuracy: 25.633]
+
+Best Accuracy: 25.632754342431763
+Train: [Epoch: 3/100, Batch: 225 (100%), running_loss: 382.042]
+Validation: [running loss: 213.175, accuracy: 33.579]
+
+Best Accuracy: 33.57940446650124
+Train: [Epoch: 4/100, Batch: 118 (52%), running_loss: 195.688]
 </code></pre></div></div>
 
         
