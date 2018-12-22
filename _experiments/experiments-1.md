@@ -289,8 +289,8 @@ class FER2013Dataset(Dataset):
     def __init__(self, X, Y, transform=None):
         """
         Args:
-            csv_file (string): Path to the csv file with annotations.
-            root_dir (string): Directory with all the images.
+            X (np array): shape nx1x32x32.
+            Y (string): nx1.
             transform (callable, optional): Optional transform to be applied
                 on a sample.
         """
