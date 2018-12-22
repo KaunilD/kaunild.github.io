@@ -2,3 +2,4 @@
 .vs/*
 *.sqlite
 .vs/slnx.sqlite
+*.sqlite
