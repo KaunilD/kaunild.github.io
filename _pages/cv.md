@@ -14,7 +14,7 @@ redirect_from:
 Education
 ======
 * M.S. in CS, University of Colorado Boulder, 2020 (expected)
-* B.E. in CS, University of Mumbai, 2013 - 2017. __GPA: 3.0__
+* B.E. in CS, University of Mumbai, 2013 - 2017.
 
 Work experience
 ======
