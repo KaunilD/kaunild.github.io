@@ -9,7 +9,7 @@ redirect_from:
 
 {% include base_path %}
 
-[Resume](https://kaunild.github.io/files/resume.pdf)
+[Resume](https://kaunild.github.io/files/resume-08-19.pdf)
 
 Education
 ======
@@ -18,6 +18,15 @@ Education
 
 Work experience
 ======
+* __Graduate Research Assistant - Institute of Cognitive Science:__ _May 2019 - Present_
+  * My research lies at the intersection of Cognitive Science and Deep Learning for Multi-Label classification of fNIRS data to predict cognitive workload.
+  * Day-to-day tasks involve getting my hands dirty with:
+    1. Data Synthesis using SMOTE, Tomek links and ENN.
+    2. Deep Learning with 3DCNNs, LSTMs (not mutually exclusive).
+    3. Investigating model transfer across different fNIRS devices and Subjects.
+    4. Investigating learned features using LIME and SHAP and deconvolution.
+    5. Tons of reading and documentation.
+    6. __Publication in SIGCHI2020 submitted for peer review.__
 * __Computer Vision Engineer - Insylo Tech SLU (contract):__ _March 2018 - June 2018_
   * Developed Computer Vision Pipelines for Volumetric Estimation of Silos using 2D and 3D images.
   * CV Techniques such as Depth from Focus and depth from Laser Mesh Projection were implemented.
