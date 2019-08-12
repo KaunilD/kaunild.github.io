@@ -10,10 +10,10 @@ redirect_from:
 
 I am a second year Graduate Student at the University of Colorado, Boulder. Prior to my graduate studies,
 I was at Facebook's Connectivity Labs working as a Software Engineer in Machine Learning and Computer Vision
-with Dr. Ramesh Raskar and Dr. Ilke Demir.
+with [Dr. Ramesh Raskar](http://web.media.mit.edu/~raskar/) and [Dr. Ilke Demir](https://scholar.google.com/citations?user=6837MdMAAAAJ&hl=en).
 
-Currently, I am a graduate researcher at the Institute of Cognitive Science advised by Dr. Leanne Hirshfield.
-My research here lies at the intersection of Cognitive Science and Deep Learning.
+Currently, I am a graduate researcher at the [Institute of Cognitive Science](https://www.colorado.edu/ics/) advised by
+[Dr. Leanne Hirshfield](https://www.colorado.edu/ics/leanne-hirshfield). My research at ICS lies at the intersection of Cognitive Science and Deep Learning.
 
 My research interests in general include:  
 1. Machine Learning   

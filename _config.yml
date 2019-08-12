@@ -7,7 +7,7 @@
 
 # Site Settings
 locale                   : "en-US"
-title                    : "K.D."
+title                    : "Kaunil Dhruv"
 title_separator          : "-"
 name                     : &name "Kaunil Dhruv"
 description              : &description "MS in Computer Science at UC Boulder"
@@ -86,7 +86,7 @@ author:
   location         : "Boulder, CO"
   employer         :
   googlescholar    : "https://scholar.google.com.sg/citations?user=qWbSoRUAAAAJ&hl=en"
-  email            : "dhruv.kaunil@gmail.com"
+  email            : "kaunil.dhruv@colorado.edu"
   uri              :
   bitbucket        :
   codepen          :
@@ -99,7 +99,7 @@ author:
   keybase          :
   instagram        :
   lastfm           :
-  linkedin         : "http://linkedin.com/in/dhruv-kaunil"
+  linkedin         : "http://linkedin.com/in/kaunil-dhruv"
   orcid            : "http://orcid.org/kaunild"
   pinterest        :
   soundcloud       :
