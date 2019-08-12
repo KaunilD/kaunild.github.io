@@ -1,6 +1,6 @@
 ---
 permalink: /
-title: "Hi I'm Kaunil Dhruv."
+title: ""
 excerpt: "About me"
 author_profile: true
 redirect_from:
@@ -8,13 +8,17 @@ redirect_from:
   - /about.html
 ---
 
-I am pursuing my graduate studies in Data Science and Machine Learning at the University of Colorado Boulder.
+I am a second year Graduate Student at the University of Colorado, Boulder. Prior to my graduate studies,
+I was at Facebook's Connectivity Labs working as a Software Engineer in Machine Learning and Computer Vision
+with [Dr. Ramesh Raskar](http://web.media.mit.edu/~raskar/) and [Dr. Ilke Demir](https://scholar.google.com/citations?user=6837MdMAAAAJ&hl=en).
 
-Prior to my graduate studies, I was at Facebook Research as a Software Engineer in Machine Learning from September 2016 - December 2017.
+Currently, I am a graduate researcher at the [Institute of Cognitive Science](https://www.colorado.edu/ics/) advised by
+[Dr. Leanne Hirshfield](https://www.colorado.edu/ics/leanne-hirshfield). My research at ICS lies at the intersection of Cognitive Science and Deep Learning.
 
-My research interests include:  
+My research interests in general include:  
 1. Machine Learning   
-2. Computer Vision  
-3. Data Science  
+2. Computer Vision
+3. Human Computer Interaction
 
-[[Resume](https://kaunild.github.io/files/resume.pdf)]
+You can reach out to me at kaunil.dhruv@colorado.edu.
+[Here](https://kaunild.github.io/files/resume.pdf) is my resume.

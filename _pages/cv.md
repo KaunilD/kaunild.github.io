@@ -40,10 +40,25 @@ Work experience
   * Optimized rendering of 2D vector geometries on an Android App. This optimization made it possible for the Android Application to be used by low end phones and reduce costs by a factor of 10.
   * All the codes are open sourced to [facebookresearch/street-address](https://github.com/facebookresearch/street-addresses)
 
-* __Software Engineer Intern: ISENSES INC.__ _January 2016 - January 2017_
+* __Software Engineer Intern: iSENSES INC.__ _January 2016 - January 2017_
   * Developed a Machine Learning pipeline for Disguised Face Detection.
   * Implemented a SegNet based feature detector to identify facial action units which were then used to classify disguised faces using an SVM Classifier.
   * Entire pipeline was optimized and implemented on a an FPGA and materialized into a product.
+
+Teaching Experience
+======
+* __Neural Networks and Deep Learning - CSCI 5922:__ _Jan 2019 - May 2019_
+  * __Supervisor__: [Dr. Nicholas Dronen](https://ndronen.github.io/CSCI5922/)
+  * Here I designed and implemented pedagogical versions of machine learning architectures from scratch in python.
+  * Algorithms such as Auto Differentiation, Convolutional Neural Networks and Recurrent Neural Nets are implemented
+    from ground up using numpy and numba in python allowing students to learn how mature deep learning frameworks works underneath.
+
+* __Introduction to Computer Programming with C and Python - CSCI 1300:__ _Sep 2018 - Dec 2018_
+  * __Supervisor__: [Prof. Elisabeth Stade](https://www.colorado.edu/cs/elisabeth-stade)
+  * This course teaches high school level math topics like statistics, geometry, probability, and calculus using python.
+  * My responsibilities include creating and grading assignments and solving doubts. See less
+
+
 
 Publications
 ======
