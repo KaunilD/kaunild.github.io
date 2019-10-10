@@ -21,4 +21,4 @@ My research interests in general include:
 3. Human Computer Interaction
 
 You can reach out to me at kaunil.dhruv@colorado.edu.
-[Here](https://kaunild.github.io/files/resume_9-20.pdf) is my resume.
+[Here](https://kaunild.github.io/files/resume_09-20.pdf) is my resume.
