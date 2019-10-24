@@ -7,5 +7,6 @@ collection: portfolio
 * Developed a Machine Learning pipeline for Disguised Face Detection.
 * Implemented a SegNet based feature detector to identify facial action units which were then used to classify disguised faces using an    SVM Classifier.
 * Entire pipeline was optimized and implemented on a an FPGA and materialized into a product.
+* You can find a recreation of my work with __semantic segmentation for facial landmark detection [here](https://github.com/KaunilD/facs-segmentation)__.
 
 <iframe width="640" height="564" src="https://player.vimeo.com/video/248132629" frameborder="0" allowFullScreen mozallowfullscreen webkitAllowFullScreen></iframe>
