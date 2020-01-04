@@ -13,7 +13,7 @@ I was at Facebook's Connectivity Labs working as a Software Engineer in Machine 
 with [Dr. Ramesh Raskar](http://web.media.mit.edu/~raskar/) and [Dr. Ilke Demir](https://scholar.google.com/citations?user=6837MdMAAAAJ&hl=en).
 
 Currently, I am a graduate researcher at the [Institute of Cognitive Science](https://www.colorado.edu/ics/) advised by
-[Dr. Leanne Hirshfield](https://www.colorado.edu/ics/leanne-hirshfield). My research at ICS lies at the intersection of Cognitive Science and Deep Learning.
+[Dr. Leanne Hirshfield](https://www.colorado.edu/ics/leanne-hirshfield). My research at ICS lies at the intersection of Cognitive Science and Deep Learning. To learn more about my research you can find the report [here](https://kaunild.github.io/files/ra_fnirs_report.pdf).
 
 My research interests in general include:  
 1. Machine Learning   
@@ -21,4 +21,4 @@ My research interests in general include:
 3. Human Computer Interaction
 
 You can reach out to me at kaunil.dhruv@colorado.edu.
-[Here](https://kaunild.github.io/files/resume_9-20.pdf) is my resume.
+[Here](https://kaunild.github.io/files/resume_11-05.pdf) is my resume.
