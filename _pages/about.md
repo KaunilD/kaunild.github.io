@@ -13,10 +13,10 @@ I was at Facebook's Connectivity Labs working as a Software Engineer in Machine 
 with [Dr. Ramesh Raskar](http://web.media.mit.edu/~raskar/) and [Dr. Ilke Demir](https://scholar.google.com/citations?user=6837MdMAAAAJ&hl=en).
 
 Currently, I am a graduate researcher at the [Institute of Cognitive Science](https://www.colorado.edu/ics/) advised by
-[Dr. Leanne Hirshfield](https://www.colorado.edu/ics/leanne-hirshfield). My research at ICS lies at the intersection of Cognitive Science and Deep Learning. To learn more about my research you can find the report [here](https://kaunild.github.io/files/ra_fnirs_report.pdf).
+[Dr. Leanne Hirshfield](https://www.colorado.edu/ics/leanne-hirshfield). My research at ICS lies at the intersection of Cognitive Science and Deep Learning. You can learn more about my research in the report [here](https://kaunild.github.io/files/ra_fnirs_report.pdf).
 
 My research interests in general include:  
-1. Machine Learning   
+1. Deep Learning, Statistics   
 2. Computer Vision
 3. Human Computer Interaction
 
